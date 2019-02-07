@@ -25,34 +25,36 @@ const similarSchema = new mongoose.Schema({
 
 const SimilarList = mongoose.model('Similarlist', similarSchema);
 
-function insertURL(data) {
-  data.forEach(obj => {
-    obj.image = "https://picsum.photos/300/300/?random";
-      });
-  return data;
-}
+module.exports = SimilarList;
 
-const newMock = insertURL(mockData);
+// Uncomment to populate DB with dummy data
 
-// console.log(newMock);
+// function insertURL(data) {
+//   data.forEach(obj => {
+//     obj.image = "https://picsum.photos/300/300/?random";
+//       });
+//   return data;
+// }
 
-function save(data) {
-  data.forEach(entry => {
-    entry = new SimilarList({
-      product_name: entry.product_name,
-      category: entry.category,
-      size: entry.size,
-      sku: entry.sku,
-      description: entry.description,
-      stars: entry.stars,
-      reviews: entry.reviews,
-      loves: entry.loves,
-      exclusive: entry.exclusive,
-      price: entry.price,
-      image: entry.image
-    }).save()
-      .catch(err => console.log(err));
-  })
-}
+// const newMock = insertURL(mockData);
 
-save(mockData);
+// function save(data) {
+//   data.forEach(entry => {
+//     entry = new SimilarList({
+//       product_name: entry.product_name,
+//       category: entry.category,
+//       size: entry.size,
+//       sku: entry.sku,
+//       description: entry.description,
+//       stars: entry.stars,
+//       reviews: entry.reviews,
+//       loves: entry.loves,
+//       exclusive: entry.exclusive,
+//       price: entry.price,
+//       image: entry.image
+//     }).save()
+//       .catch(err => console.log(err));
+//   })
+// }
+
+// save(mockData);
