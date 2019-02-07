@@ -51,7 +51,6 @@ function save(data) {
       price: entry.price,
       image: entry.image
     }).save()
-      .then(() => console.log('success'))
       .catch(err => console.log(err));
   })
 }
