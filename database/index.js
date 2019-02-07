@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:3004/similarlist', {
+mongoose.connect('mongodb://localhost/similarlist', {
   useNewUrlParser: true
 });
 
