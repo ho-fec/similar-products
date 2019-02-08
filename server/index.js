@@ -3,7 +3,7 @@ const path = require('path');
 const parser = require('body-parser');
 const PORT = 3004;
 const db = require('../database/index.js');
-const getSimilar = require('./controller.js');
+const { getSimilar } = require('./controller.js');
 
 const app = express();
 
