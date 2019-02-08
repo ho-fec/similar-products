@@ -3,6 +3,7 @@ import CarouselItem from './CarouselItem.jsx';
 import styles from '../css/Carousel.css';
 import lArrow from '../assets/left-arrow.svg';
 import rArrow from '../assets/right-arrow.svg';
+const faker = require('faker');
 
 class Carousel extends React.Component {
   constructor(props) {
