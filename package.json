@@ -20,6 +20,7 @@
     "node": "^11.9.0",
     "nodemon": "^1.18.9",
     "react": "^16.8.1",
+    "react-css-modules": "^4.7.9",
     "react-dom": "^16.8.1"
   },
   "devDependencies": {
@@ -30,6 +31,7 @@
     "babel-plugin-styled-components": "^1.10.0",
     "css-loader": "^2.1.0",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
+    "file-loader": "^3.0.1",
     "style-loader": "^0.23.1",
     "webpack": "^4.29.2",
     "webpack-cli": "^3.2.3"
