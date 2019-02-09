@@ -28,14 +28,18 @@ class Carousel extends React.Component {
 
   render() {
     return (
-      <div className={ styles.container }>
+      <div className={ styles.outerContainer }>
         <button className={ styles.button }>
           <img className={ styles.arrow } src={lArrow} />
         </button>
-
-          {this.state.list.map((item, i) =>
-          <CarouselItem key={i} item={item.image} />)}
-          
+        <div className={ styles.innerContainer }>
+        {this.state.list.map((item, i) =>
+        <CarouselItem
+        key={i}
+        item={item.image}
+        name={ item.product_name }
+        category={ item.category } />)}
+        </div>
         <button className={ styles.button }>
           <img className={ styles.arrow } src={rArrow} />
         </button>
