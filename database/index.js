@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
 const mockData = require('../MOCK_DATA.js');
 
-mongoose.connect('mongodb://localhost/similarlist');
+mongoose.connect('mongodb://localhost/similarlist', {
+  useNewUrlParser: true
+});
 
 const db = mongoose.connection;
 
