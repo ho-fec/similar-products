@@ -1,7 +1,15 @@
-.item {
+.entry {
   display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.item {
   height: 135px;
   width: 135px;
+  margin-bottom: 10px;
 }
 
 .name {

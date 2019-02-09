@@ -10,9 +10,8 @@
   overflow: scroll;
 }
 
-.carouselContainer {
-  display: flex;
-  flex-direction: row;
+::-webkit-scrollbar { 
+  display: none; 
 }
 
 .button {

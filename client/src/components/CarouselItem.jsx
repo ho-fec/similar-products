@@ -3,7 +3,7 @@ import styles from '../css/CarouselItem.css'
 import star from '../assets/carousel-star.svg';
 
 const Entry = props => (
-  <div>
+  <div className={ styles.entry }>
     <div>
       <img className ={ styles.item } src={ props.item } />
     </div>
