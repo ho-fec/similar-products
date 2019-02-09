@@ -32,8 +32,10 @@ class Carousel extends React.Component {
         <button className={ styles.button }>
           <img className={ styles.arrow } src={lArrow} />
         </button>
-        {this.state.list.map((item, i) =>
-        <CarouselItem key={i} item={item.image} />)}
+
+          {this.state.list.map((item, i) =>
+          <CarouselItem key={i} item={item.image} />)}
+          
         <button className={ styles.button }>
           <img className={ styles.arrow } src={rArrow} />
         </button>

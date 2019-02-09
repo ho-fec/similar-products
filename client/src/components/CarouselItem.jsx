@@ -8,11 +8,15 @@ const Entry = props => (
       <img className ={styles.item} src={props.item} />
     </div>
     <div className={ styles.name }>
-      <div>Category name</div>
-      <div>Product name</div>
-    </div>
-    <div className={ styles.price }>
-      <div>$4.20</div>
+      <div className={ styles.category }>
+      Category name
+      </div>
+      <div className={ styles.productName }>
+      Product name
+      </div>
+      <div className={ styles.price }>
+      $4.20
+      </div>
     </div>
     <div className={ styles.starContainer }>
       <img className={ styles.star } src={star} />
