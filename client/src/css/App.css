@@ -1,3 +1,7 @@
+.box {
+  max-width: 980px;
+  margin: auto;
+}
 
 .title {
   position: relative;
