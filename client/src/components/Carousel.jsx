@@ -10,7 +10,7 @@ class Carousel extends React.Component {
     super(props);
     this.state = {
       list: [],
-      move: false
+      scroll: 0
     }
     this.clickLeft = this.clickLeft.bind(this);
     this.clickRight = this.clickRight.bind(this);
@@ -24,21 +24,27 @@ class Carousel extends React.Component {
   }
   
   clickLeft(e) {
-    this.setState({ move: true });
+    this.setState({ scroll: this.state.scroll - 1 });
   }
 
   clickRight(e) {
-    this.setState({ move: true });
+    this.setState({ scroll: this.state.scroll + 1 });
   }
 
   render() {
-    let { move } = this.state;
+    let { scroll } = this.state;
+    let move = styles.innerContainer;
+    if (scroll === 1) {
+      move = styles.r1;
+    } else if (scroll === 2) {
+      move = styles.r2;
+    }
 
     return (
       <div className={ styles.outerWrapper }>
         <div className={ styles.innerWrapper }>
-          <div className={ styles.outer }>
-            <div className={ styles.inner }>
+          <div className={ styles.outerContainer }>
+            <div className={ move } >
               {this.state.list.map((item, i) =>
               <CarouselItem
                 key={ i }
@@ -49,7 +55,7 @@ class Carousel extends React.Component {
             </div>
           </div>
 
-          <button className={ styles.buttonL } onClick={ this.clickRight } >
+          <button className={ styles.buttonL } onClick={ this.clickLeft } >
             <img className={ styles.arrow } src={ lArrow } />
           </button>
 

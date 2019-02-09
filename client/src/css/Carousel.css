@@ -8,16 +8,30 @@
   padding-left: 32px;
 }
 
-.outer {
+.outerContainer {
   position: relative;
   overflow: hidden;
 }
 
-.inner {
+.innerContainer {
   display: flex;
   flex-direction: row;
-  transform: translateX(0px);
-  transition: transform 300ms ease 0s;
+  transform: translateX(0%);
+  transition: transform 1000ms ease 0s;
+}
+
+.r1 {
+  display: flex;
+  flex-direction: row;
+  transform: translateX(-100%);
+  transition: transform 1000ms ease 0s;
+}
+
+.r2 {
+  display: flex;
+  flex-direction: row;
+  transform: translateX(-200%);
+  transition: transform 1000ms ease 0s;
 }
 
 ::-webkit-scrollbar { 
