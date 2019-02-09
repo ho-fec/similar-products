@@ -4,7 +4,7 @@ import star from '../assets/carousel-star.svg';
 
 const Entry = props => (
   <div>
-    <div className={ styles.image }>
+    <div>
       <img className ={styles.item} src={props.item} />
     </div>
     <div className={ styles.name }>
@@ -26,6 +26,6 @@ const Entry = props => (
       <img className={ styles.star } src={star} />
     </div>
   </div>
-)
+);
 
 export default Entry;
