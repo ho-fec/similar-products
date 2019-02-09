@@ -5,11 +5,11 @@ import love from '../assets/love.svg';
 
 const Entry = props => (
   <div className={ styles.entry }>
-    <div>
+    <div className={ styles.itemContainer }>
       <img className={ styles.item } src={ props.item } />
-      <button className={ styles.loveButton }>
-        <img className={ styles.love } src={ love } />
-      </button>
+    <button className={ styles.loveButton }>
+      <img className={ styles.love } src={ love } />
+    </button>
     </div>
     <div className={ styles.name }>
       <div className={ styles.category }>
