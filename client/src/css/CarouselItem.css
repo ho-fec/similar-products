@@ -66,6 +66,7 @@
   border: none;
   cursor:pointer;
   outline:none;
+  opacity: 0;
 }
 
 .love {
