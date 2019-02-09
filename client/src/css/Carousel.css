@@ -9,6 +9,7 @@
   flex-direction: row;
   overflow: scroll;
   margin-left: -12px;
+  transform: translate3d(0, 0, 0);
 }
 
 ::-webkit-scrollbar { 
