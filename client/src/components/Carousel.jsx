@@ -23,14 +23,14 @@ class Carousel extends React.Component {
     axios
       .get('/item')
       .then(({ data }) => this.setState({ list: [...data] }))
-      .catch(err => console.log(err))
+      .catch(err => console.log(err));
   }
 
   render() {
     return (
       <div className={ styles.outerContainer }>
         <button className={ styles.button }>
-          <img className={ styles.arrow } src={lArrow} />
+          <img className={ styles.arrow } src={ lArrow } />
         </button>
         <div className={ styles.innerContainer }>
         {this.state.list.map((item, i) =>
@@ -38,10 +38,11 @@ class Carousel extends React.Component {
         key={i}
         item={item.image}
         name={ item.product_name }
-        category={ item.category } />)}
+        category={ item.category }
+        price={ item.price } />)}
         </div>
         <button className={ styles.button }>
-          <img className={ styles.arrow } src={rArrow} />
+          <img className={ styles.arrow } src={ rArrow } />
         </button>
       </div>
     )

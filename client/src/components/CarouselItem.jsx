@@ -5,25 +5,25 @@ import star from '../assets/carousel-star.svg';
 const Entry = props => (
   <div>
     <div>
-      <img className ={styles.item} src={props.item} />
+      <img className ={ styles.item } src={ props.item } />
     </div>
     <div className={ styles.name }>
       <div className={ styles.category }>
-      Category name
+      {props.category}
       </div>
       <div className={ styles.productName }>
-      Product name
+      {props.name}
       </div>
       <div className={ styles.price }>
-      $4.20
+      {props.price}
       </div>
     </div>
     <div className={ styles.starContainer }>
-      <img className={ styles.star } src={star} />
-      <img className={ styles.star } src={star} />
-      <img className={ styles.star } src={star} />
-      <img className={ styles.star } src={star} />
-      <img className={ styles.star } src={star} />
+      <img className={ styles.star } src={ star } />
+      <img className={ styles.star } src={ star } />
+      <img className={ styles.star } src={ star } />
+      <img className={ styles.star } src={ star } />
+      <img className={ styles.star } src={ star } />
     </div>
   </div>
 );
