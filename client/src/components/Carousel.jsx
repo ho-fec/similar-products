@@ -8,38 +8,33 @@ import axios from 'axios';
 class Carousel extends React.Component {
   constructor(props) {
     super(props);
-    this.state ={
-      list: []
+    this.state = {
+      list: [],
+      position: 0
     }
   }
-
-  // 'https://sephora.com/productimages/sku/s1897487-main-grid.jpg',
-  //     'https://sephora.com/productimages/sku/s1897495-main-grid.jpg',
-  //     'https://sephora.com/productimages/sku/s487694-main-grid.jpg',
-  //     'https://sephora.com/productimages/sku/s1217710-main-grid.jpg',
-  //     'https://sephora.com/productimages/sku/s1835420-main-grid.jpg'
 
   componentDidMount() {
     axios
       .get('/item')
       .then(({ data }) => this.setState({ list: [...data] }))
-      .catch(err => console.log(err));
+      .catch(err => console.log(err))
   }
 
   render() {
     return (
-      <div className={ styles.outerContainer }>
+      <div className={ styles.wrapper }>
         <button className={ styles.button }>
           <img className={ styles.arrow } src={ lArrow } />
         </button>
         <div className={ styles.innerContainer }>
-        {this.state.list.map((item, i) =>
-        <CarouselItem
-        key={i}
-        item={item.image}
-        name={ item.product_name }
-        category={ item.category }
-        price={ item.price } />)}
+          {this.state.list.map((item, i) =>
+          <CarouselItem
+            key={ i }
+            item={ item.image }
+            name={ item.product_name }
+            category={ item.category }
+            price={ item.price } />)}
         </div>
         <button className={ styles.button }>
           <img className={ styles.arrow } src={ rArrow } />
@@ -50,3 +45,4 @@ class Carousel extends React.Component {
 }
 
 export default Carousel;
+

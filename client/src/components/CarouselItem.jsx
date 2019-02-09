@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../css/CarouselItem.css'
+import styles from '../css/CarouselItem.css';
 import star from '../assets/carousel-star.svg';
 
 const Entry = props => (
