@@ -24,21 +24,29 @@ class Carousel extends React.Component {
   }
   
   clickLeft(e) {
-    this.setState({ scroll: this.state.scroll - 1 });
+    if (this.state.scroll > 0) {
+      this.setState({ scroll: this.state.scroll - 1 });
+    }
   }
 
   clickRight(e) {
-    this.setState({ scroll: this.state.scroll + 1 });
+    if (this.state.scroll < 2) {
+      this.setState({ scroll: this.state.scroll + 1 });
+    }
   }
 
   render() {
     let { scroll } = this.state;
     let move = styles.innerContainer;
-    if (scroll === 1) {
+    let disabled = false;
+
+    if (scroll === 0) {
+      disabled = true;
+    } else if (scroll === 1) {
       move = styles.r1;
     } else if (scroll === 2) {
       move = styles.r2;
-    }
+    } 
 
     return (
       <div className={ styles.outerWrapper }>
@@ -55,7 +63,10 @@ class Carousel extends React.Component {
             </div>
           </div>
 
-          <button className={ styles.buttonL } onClick={ this.clickLeft } >
+          <button
+          className={ styles.buttonL }
+          onClick={ this.clickLeft }
+          disabled={ disabled }>
             <img className={ styles.arrow } src={ lArrow } />
           </button>
 

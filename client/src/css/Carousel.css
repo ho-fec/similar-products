@@ -17,25 +17,21 @@
   display: flex;
   flex-direction: row;
   transform: translateX(0%);
-  transition: transform 1000ms ease 0s;
+  transition: transform 300ms ease 0s;
 }
 
 .r1 {
   display: flex;
   flex-direction: row;
   transform: translateX(-100%);
-  transition: transform 1000ms ease 0s;
+  transition: transform 300ms ease 0s;
 }
 
 .r2 {
   display: flex;
   flex-direction: row;
   transform: translateX(-200%);
-  transition: transform 1000ms ease 0s;
-}
-
-::-webkit-scrollbar { 
-  display: none; 
+  transition: transform 300ms ease 0s;
 }
 
 .buttonL {
@@ -70,6 +66,10 @@
   border: none;
   cursor:pointer;
   outline:none;
+}
+
+button:disabled {
+  color: rgb(238, 238, 238);
 }
 
 .arrow {
