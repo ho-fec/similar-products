@@ -1,8 +1,8 @@
 import React from 'react';
 import CarouselItem from './CarouselItem.jsx';
 import styles from '../css/Carousel.css';
-import lArrow from '../assets/left-arrow.svg';
-import rArrow from '../assets/right-arrow.svg';
+import ArrowL from '../assets/left-arrow.svg';
+import ArrowR from '../assets/right-arrow.svg';
 import axios from 'axios';
 
 class Carousel extends React.Component {
@@ -38,13 +38,14 @@ class Carousel extends React.Component {
   render() {
     let { scroll } = this.state;
     let move = styles.innerContainer;
-    let disabled = false;
+    let disabledL, disabledR = false;
 
     if (scroll === 0) {
-      disabled = true;
+      disabledL = true;
     } else if (scroll === 1) {
       move = styles.r1;
     } else if (scroll === 2) {
+      disabledR = true;
       move = styles.r2;
     } 
 
@@ -66,12 +67,15 @@ class Carousel extends React.Component {
           <button
           className={ styles.buttonL }
           onClick={ this.clickLeft }
-          disabled={ disabled }>
-            <img className={ styles.arrow } src={ lArrow } />
+          disabled={ disabledL }>
+            <img className={ styles.arrow } src={ ArrowL } />
           </button>
 
-          <button className={ styles.buttonR } onClick={ this.clickRight } >
-            <img className={ styles.arrow } src={ rArrow } />
+          <button
+          className={ styles.buttonR }
+          onClick={ this.clickRight }
+          disabled ={ disabledR }>
+            <img className={ styles.arrow } src={ ArrowR } />
           </button>
         </div>
       </div>
