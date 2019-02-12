@@ -13,6 +13,11 @@
   height: 135px;
 }
 
+.itemContainer:hover .loveButton {
+  opacity: 1;
+  transition: opacity .25s ease-in-out;
+}
+
 .item {
   height: 100%;
   width: 100%;
