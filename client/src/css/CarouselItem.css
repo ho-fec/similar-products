@@ -2,13 +2,27 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+.itemContainer {
+  display: block;
+  position: relative;
+  width: 135px;
+  height: 135px;
+}
+
+.itemContainer:hover .loveButton {
+  opacity: 1;
+  transition: opacity .25s ease-in-out;
+  -moz-transition: opacity .25s ease-in-out;
+  -webkit-transition: opacity .25s ease-in-out;
 }
 
 .item {
-  height: 135px;
-  width: 135px;
+  height: 100%;
+  width: 100%;
   margin-bottom: 10px;
 }
 
@@ -47,4 +61,27 @@
   width: 1em;
   vertical-align: text-bottom;
   fill: currentColor;
+}
+
+.loveButton {
+  position: absolute;
+  right: 0px;
+  width: 24px;
+  height: 24px;
+  background-color: transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  outline:none;
+  opacity: 0;
+}
+
+.love {
+  display: inline-block;
+  position: relative;
+  fill: currentColor;
+  vertical-align: text-bottom;
+  margin-left: -4px;
+  height: 1em;
+  width: 1.25em;
 }

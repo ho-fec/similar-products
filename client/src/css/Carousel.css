@@ -1,31 +1,79 @@
+.outerWrapper {
+  display: block;
+}
+
+.innerWrapper {
+  position: relative;
+  padding-right: 32px;
+  padding-left: 32px;
+}
+
 .outerContainer {
-  display: flex;
-  flex-direction: row;
+  position: relative;
   overflow: hidden;
 }
 
 .innerContainer {
   display: flex;
   flex-direction: row;
-  overflow: scroll;
+  transform: translateX(0%);
+  transition: transform 300ms ease 0s;
 }
 
-::-webkit-scrollbar { 
-  display: none; 
+.r1 {
+  display: flex;
+  flex-direction: row;
+  transform: translateX(-100%);
+  transition: transform 300ms ease 0s;
 }
 
-.button {
+.r2 {
+  display: flex;
+  flex-direction: row;
+  transform: translateX(-200%);
+  transition: transform 300ms ease 0s;
+}
+
+.buttonL {
+  font-size: 36px;
+  line-height: 0;
+  height: 135px;
+  position: absolute;
+  text-align: left;
+  left: 0px;
+  top: 0px;
+  width: 32px;
+  overflow: hidden;
   background-color: transparent;
   background-repeat:no-repeat;
   border: none;
   cursor:pointer;
   outline:none;
-  width: 32px;
+}
+
+.buttonR {
+  font-size: 36px;
+  line-height: 0;
   height: 135px;
+  position: absolute;
+  text-align: right;
+  right: 0px;
+  top: 0px;
+  width: 32px;
+  overflow: hidden;
+  background-color: transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  outline:none;
+}
+
+button:disabled {
+  color: rgb(238, 238, 238);
 }
 
 .arrow {
-  width: 1em;
-  height: 2em;
+  width: 0.5em;
+  height: 1em;
   fill: currentColor;
 }

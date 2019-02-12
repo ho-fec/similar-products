@@ -4,11 +4,10 @@ import styles from '../css/App.css';
 
 const App = () => (
   <div className={ styles.box }>
-    <div className={ styles.title } >Similar Products</div>
-    <div className={ styles.box }>
-      <Carousel />
+    <div className={ styles.title } >
+      Similar Products
     </div>
-    {/* <Select /> */}
+    <Carousel />
   </div>
 );
 
