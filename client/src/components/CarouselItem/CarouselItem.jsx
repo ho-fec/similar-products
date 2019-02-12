@@ -30,6 +30,9 @@ class Entry extends React.Component {
           <div className={ styles.itemContainer2 }>
             <div className={ styles.itemContainer3 }>
               <Image item={ this.props.item } />
+              <button className={ styles.moreInfo }>
+                Quick Look
+              </button>
               <div className={ styles.loveContainer }>
                 <Love />
               </div>
