@@ -68,7 +68,6 @@ class Carousel extends React.Component {
           className={ styles.buttonL }
           onClick={ this.clickLeft }
           disabled={ disabledL }>
-            {/* <img className={ styles.arrow } src={ ArrowL } /> */}
             <ArrowL viewBox={ "0 0 16 32" } className={ styles.arrow }/>
           </button>
 
@@ -76,7 +75,6 @@ class Carousel extends React.Component {
           className={ styles.buttonR }
           onClick={ this.clickRight }
           disabled ={ disabledR }>
-            {/* <img className={ styles.arrow } src={ ArrowR } /> */}
             <ArrowR viewBox={ "0 0 16 32" } className={ styles.arrow }/>
           </button>
         </div>
