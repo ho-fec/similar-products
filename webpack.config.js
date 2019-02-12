@@ -36,20 +36,6 @@ module.exports = {
       {
         test: /\.(png|svg|jpg|gif)$/,
         use: ['file-loader']
-      },
-      {
-        test: /\.svg$/,
-        exclude: /node_modules/,
-        use: {
-            loader: 'svg-react-loader',
-            options: {
-                tag: 'symbol',
-                attrs: {
-                    title: 'example',
-                },
-                name: 'MyIcon',
-            },
-        },
       }
     ]
   },
