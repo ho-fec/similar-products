@@ -1,59 +1,86 @@
 .entry {
   display: flex;
-  flex-direction: column;
-  width: 100%;
-  margin-left: 25px;
-  margin-right: 25px;
+  flex-shrink: 0;
+  max-width: 164px;
+  width: 20%;
+  padding-left: 12px;
+  padding-right: 12px;
 }
 
-.itemContainer {
+.itemContainer1 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  line-height: 1.25;
+  text-align: center;
+}
+
+.itemContainer2 {
+  position: relative;
+}
+
+.itemContainer3 {
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 135px;
+  margin-bottom: 12px;
+}
+
+.imageContainer1 {
   display: block;
   position: relative;
+  max-width: 100%;
   width: 135px;
-  height: 135px;
+}
+
+.imageContainer2 {
+  display: block;
+  padding-bottom: 100%;
+}
+
+.image {
+  display: block;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 100%;
+  width: 100%;
 }
 
 .itemContainer:hover .loveButton {
   opacity: 1;
-  transition: opacity .25s ease-in-out;
-  -moz-transition: opacity .25s ease-in-out;
-  -webkit-transition: opacity .25s ease-in-out;
-}
-
-.item {
-  height: 100%;
-  width: 100%;
-  margin-bottom: 10px;
+  transition: opacity .15s ease 0s;
+  -moz-transition: opacity .15s ease 0s;
+  -webkit-transition: opacity .15s ease 0s;
 }
 
 .name {
   font-family: "helvetica neue", arial, sans-serif;
-  font-size: 14px;
-  line-height: 1.5;
+  font-size: 12px;
+  line-height: 1.25;
   text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .category {
-  font-size: 12px;
   line-height: 1;
   font-weight: 700;
   text-transform: uppercase;
 }
 
-.productName {
-  font-size: 12px;
-  line-height: 1.25;
-}
-
 .price {
   font-size: 12px;
   font-weight: 700;
-  text-align: center;
+  margin-top: 4px;
 }
 
 .starContainer {
   display: flex;
   justify-content: center;
+  margin-top: 8px;
 }
 
 .star {
@@ -84,4 +111,16 @@
   margin-left: -4px;
   height: 1em;
   width: 1.25em;
+  color: rgb(0, 0, 0);
+}
+
+.loved {
+  display: inline-block;
+  position: relative;
+  fill: currentColor;
+  vertical-align: text-bottom;
+  margin-left: -4px;
+  height: 1em;
+  width: 1.25em;
+  color: rgb(236, 4, 15);
 }

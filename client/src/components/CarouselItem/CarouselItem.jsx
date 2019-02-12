@@ -11,37 +11,42 @@ class Entry extends React.Component {
   render() {
     return (
       <div className={ styles.entry }>
-        <div className={ styles.itemContainer }>
-          <img className={ styles.item } src={ this.props.item } />
+        <div className={ styles.itemContainer1 }>
+          <div className={ styles.itemContainer2 }>
+            <div className={ styles.itemContainer3 }>
+              <div className={ styles.imageContainer1 }>
+                <div className={ styles.imageContainer2 }>
+                  <img className={ styles.image } src={ this.props.item }/>
+                </div>
+              </div>
+              <button className={ styles.loveButton }>
+                <img className={ styles.love } src={ love }/>
+              </button>
+            </div>
 
-        <button
-        className={ styles.loveButton }
->
-          <img className={ styles.love } src={ love } />
-        </button>
+            <div className={ styles.name }>
+              <span className={ styles.category }>
+                {this.props.category}
+              </span>
+              <br />
+              <span>
+                {this.props.name}
+              </span>
+              <div className={ styles.price }>
+                {this.props.price}
+              </div>
+            </div>
 
-        </div>
-        <div className={ styles.name }>
+            <div className={ styles.starContainer }>
 
-          <div className={ styles.category }>
-          {this.props.category}
+              <img className={ styles.star } src={ star }/>
+              <img className={ styles.star } src={ star }/>
+              <img className={ styles.star } src={ star }/>
+              <img className={ styles.star } src={ star }/>
+              <img className={ styles.star } src={ star }/>
+
+            </div>
           </div>
-          <div className={ styles.productName }>
-          {this.props.name}
-          </div>
-          <div className={ styles.price }>
-          {this.props.price}
-
-          </div>
-        </div>
-        <div className={ styles.starContainer }>
-
-          <img className={ styles.star } src={ star } />
-          <img className={ styles.star } src={ star } />
-          <img className={ styles.star } src={ star } />
-          <img className={ styles.star } src={ star } />
-          <img className={ styles.star } src={ star } />
-
         </div>
       </div>
     );
