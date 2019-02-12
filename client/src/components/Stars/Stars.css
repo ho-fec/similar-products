@@ -1,0 +1,29 @@
+.ratings {
+  color: rgb(204, 204, 204);
+  width: 5em;
+  height: 1em;
+  position: relative;
+  line-height: 0;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+}
+
+.star {
+  display: inline-block;
+  height: 1em;
+  fill: currentColor;
+  position: relative;
+  vertical-align: text-bottom;
+  width: 1em;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  color: black;
+}
