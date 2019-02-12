@@ -72,8 +72,13 @@
   outline:none;
 }
 
+button:not(:disabled):hover{
+  color: rgb(102, 102, 102);
+}
+
 button:disabled {
   color: rgb(238, 238, 238);
+  cursor: default;
 }
 
 .arrow {
