@@ -1,6 +1,6 @@
 import React from 'react';
-import Carousel from './Carousel.jsx';
-import styles from '../css/App.css';
+import Carousel from '../Carousel';
+import styles from './App.css';
 
 const App = () => (
   <div className={ styles.box }>

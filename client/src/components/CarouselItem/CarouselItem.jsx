@@ -1,7 +1,7 @@
 import React from 'react';
-import styles from '../css/CarouselItem.css';
-import star from '../assets/carousel-star.svg';
-import love from '../assets/love.svg';
+import styles from './CarouselItem.css';
+import star from '../../assets/carousel-star.svg';
+import love from '../../assets/love.svg';
 
 class Entry extends React.Component {
   constructor(props) {
