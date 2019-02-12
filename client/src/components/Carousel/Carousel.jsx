@@ -78,6 +78,7 @@ class Carousel extends React.Component {
             <ArrowR viewBox={ "0 0 16 32" } className={ styles.arrow }/>
           </button>
         </div>
+        {/* <Radio /> */}
       </div>
     )
   }

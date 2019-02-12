@@ -1,4 +1,5 @@
 .outerWrapper {
+  min-height: 195px;
   display: block;
 }
 
@@ -15,21 +16,24 @@
 
 .innerContainer {
   display: flex;
-  flex-direction: row;
+  margin-left: -12px;
+  margin-right: -12px;
   transform: translateX(0%);
   transition: transform 300ms ease 0s;
 }
 
 .r1 {
   display: flex;
-  flex-direction: row;
+  margin-left: -12px;
+  margin-right: -12px;
   transform: translateX(-100%);
   transition: transform 300ms ease 0s;
 }
 
 .r2 {
   display: flex;
-  flex-direction: row;
+  margin-left: -12px;
+  margin-right: -12px;
   transform: translateX(-200%);
   transition: transform 300ms ease 0s;
 }
