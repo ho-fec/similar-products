@@ -54,7 +54,7 @@ class Entry extends React.Component {
             </div>
 
             <div className={ styles.starContainer }>
-              <Stars />
+              <Stars stars={ this.props.stars }/>
             </div>
           </div>
         </div>
