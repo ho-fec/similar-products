@@ -2,23 +2,37 @@ import React from 'react';
 import styles from './CarouselItem.css';
 import Image from '../Image';
 import star from '../../assets/carousel-star.svg';
-import love from '../../assets/love.svg';
+import Love from '../Love';
 
 class Entry extends React.Component {
   constructor(props) {
     super(props);
+    this.state ={
+      loved: false
+    }
+    this.handleLove = this.handleLove.bind(this);
+  }
+
+  handleLove(e) {
+    this.setState({ loved: !this.state.loved })
   }
 
   render() {
+    let { loved } = this.state;
+    let loveStatus = styles.love;
+    if (loved) {
+      loveStatus = styles.loved;
+    }
+
     return (
       <div className={ styles.entry }>
         <div className={ styles.itemContainer1 }>
           <div className={ styles.itemContainer2 }>
             <div className={ styles.itemContainer3 }>
               <Image item={ this.props.item } />
-              <button className={ styles.loveButton }>
-                <img className={ styles.love } src={ love }/>
-              </button>
+              <div className={ styles.loveContainer }>
+                <Love />
+              </div>
             </div>
 
             <div className={ styles.name }>

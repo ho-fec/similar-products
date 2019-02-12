@@ -1,0 +1,33 @@
+.loveButton {
+  display: inline-block;
+  text-align: center;
+  line-height: 0;
+  width: 24px;
+  height: 24px;
+  font-size: 15px;
+  background-color: transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  outline:none;
+}
+
+.love {
+  display: inline-block;
+  position: relative;
+  fill: currentColor;
+  vertical-align: text-bottom;
+  height: 1em;
+  width: 1.25em;
+  color: rgb(0, 0, 0);
+}
+
+.loved {
+  display: inline-block;
+  position: relative;
+  fill: currentColor;
+  vertical-align: text-bottom;
+  height: 1em;
+  width: 1.25em;
+  color: rgb(236, 4, 15);
+}
