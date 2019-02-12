@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './CarouselItem.css';
+import Image from '../Image';
 import star from '../../assets/carousel-star.svg';
 import love from '../../assets/love.svg';
 
@@ -14,11 +15,7 @@ class Entry extends React.Component {
         <div className={ styles.itemContainer1 }>
           <div className={ styles.itemContainer2 }>
             <div className={ styles.itemContainer3 }>
-              <div className={ styles.imageContainer1 }>
-                <div className={ styles.imageContainer2 }>
-                  <img className={ styles.image } src={ this.props.item }/>
-                </div>
-              </div>
+              <Image item={ this.props.item } />
               <button className={ styles.loveButton }>
                 <img className={ styles.love } src={ love }/>
               </button>

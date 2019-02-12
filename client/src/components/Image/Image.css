@@ -1,0 +1,21 @@
+.imageContainer1 {
+  display: block;
+  position: relative;
+  max-width: 100%;
+  width: 135px;
+}
+
+.imageContainer2 {
+  display: block;
+  padding-bottom: 100%;
+}
+
+.image {
+  display: block;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 100%;
+  width: 100%;
+}
