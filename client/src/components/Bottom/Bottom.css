@@ -1,0 +1,26 @@
+.bottom {
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.slideButton {
+  margin-left: 3px;
+  margin-right: 3px;
+  line-height: 0px;
+  width: 10px;
+  height: 10px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.circle {
+  width: 10px;
+  height: 10px;
+  background-color: rgb(204, 204, 204);
+  border-radius: 99999px;
+}

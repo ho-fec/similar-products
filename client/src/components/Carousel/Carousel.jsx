@@ -3,6 +3,7 @@ import CarouselItem from '../CarouselItem';
 import styles from './Carousel.css';
 import ArrowL from './ArrowL.jsx';
 import ArrowR from './ArrowR.jsx';
+import Bottom from '../Bottom';
 import axios from 'axios';
 
 class Carousel extends React.Component {
@@ -69,17 +70,17 @@ class Carousel extends React.Component {
           className={ styles.buttonL }
           onClick={ this.clickLeft }
           disabled={ disabledL }>
-            <ArrowL viewBox={ "0 0 16 32" } className={ styles.arrow }/>
+            <ArrowL viewBox={ '0 0 16 32' } className={ styles.arrow }/>
           </button>
 
           <button
           className={ styles.buttonR }
           onClick={ this.clickRight }
-          disabled ={ disabledR }>
-            <ArrowR viewBox={ "0 0 16 32" } className={ styles.arrow }/>
+          disabled={ disabledR }>
+            <ArrowR viewBox={ '0 0 16 32' } className={ styles.arrow }/>
           </button>
         </div>
-        {/* <Radio /> */}
+        <Bottom />
       </div>
     )
   }
