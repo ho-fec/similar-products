@@ -13,6 +13,7 @@
   width: 100%;
   line-height: 1.25;
   text-align: center;
+  cursor: pointer;
 }
 
 .itemContainer2 {
@@ -32,6 +33,14 @@
   transition: opacity .15s ease 0s;
   -moz-transition: opacity .15s ease 0s;
   -webkit-transition: opacity .15s ease 0s;
+}
+
+.itemContainer1:hover .name {
+  text-decoration: underline;
+}
+
+.itemContainer1:hover .category {
+  text-decoration: underline;
 }
 
 .loveContainer {

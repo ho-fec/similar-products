@@ -7,7 +7,7 @@ import Love from '../Love';
 class Entry extends React.Component {
   constructor(props) {
     super(props);
-    this.state ={
+    this.state = {
       loved: false
     }
     this.handleLove = this.handleLove.bind(this);

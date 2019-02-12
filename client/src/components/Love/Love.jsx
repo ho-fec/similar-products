@@ -4,7 +4,7 @@ import styles from './Love.css';
 class Love extends Component {
   constructor(props) {
     super(props);
-    this.state ={
+    this.state = {
       loved: false
     }
     this.handleLove = this.handleLove.bind(this);
