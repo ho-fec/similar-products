@@ -1,5 +1,5 @@
 const randomNumberDec = (min, max) => {
-  return Math.random() * (max - min) + min;
+  return Number((Math.random() * (max - min) + min).toFixed(2));
 }
 
 const randomNumberInt = (min, max) => {
