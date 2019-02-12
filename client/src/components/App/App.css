@@ -3,11 +3,14 @@
   margin: auto;
 }
 
-.title {
+.titleWrapper {
   position: relative;
   margin-bottom: 32px;
+  text-align: center;
+}
+
+.title {
   line-height: 1;
   font-family: georgia, times, serif;
   font-size: 24px;
-  text-align: center;
 }

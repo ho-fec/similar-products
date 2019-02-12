@@ -4,8 +4,10 @@ import styles from './App.css';
 
 const App = () => (
   <div className={ styles.box }>
-    <div className={ styles.title } >
-      Similar Products
+    <div className={ styles.titleWrapper }>
+      <div className={ styles.title }>
+        Similar Products
+      </div>
     </div>
     <Carousel />
   </div>
