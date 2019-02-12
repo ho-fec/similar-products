@@ -13,11 +13,16 @@ class Entry extends React.Component {
       <div className={ styles.entry }>
         <div className={ styles.itemContainer }>
           <img className={ styles.item } src={ this.props.item } />
-        <button className={ styles.loveButton }>
+
+        <button
+        className={ styles.loveButton }
+>
           <img className={ styles.love } src={ love } />
         </button>
+
         </div>
         <div className={ styles.name }>
+
           <div className={ styles.category }>
           {this.props.category}
           </div>
@@ -26,14 +31,17 @@ class Entry extends React.Component {
           </div>
           <div className={ styles.price }>
           {this.props.price}
+
           </div>
         </div>
         <div className={ styles.starContainer }>
+
           <img className={ styles.star } src={ star } />
           <img className={ styles.star } src={ star } />
           <img className={ styles.star } src={ star } />
           <img className={ styles.star } src={ star } />
           <img className={ styles.star } src={ star } />
+
         </div>
       </div>
     );

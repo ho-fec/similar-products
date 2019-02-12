@@ -1,8 +1,8 @@
 import React from 'react';
 import CarouselItem from './CarouselItem.jsx';
 import styles from '../css/Carousel.css';
-import ArrowL from '../assets/left-arrow.svg';
-import ArrowR from '../assets/right-arrow.svg';
+import ArrowL from './ArrowL.jsx';
+import ArrowR from './ArrowR.jsx';
 import axios from 'axios';
 
 class Carousel extends React.Component {
@@ -68,14 +68,16 @@ class Carousel extends React.Component {
           className={ styles.buttonL }
           onClick={ this.clickLeft }
           disabled={ disabledL }>
-            <img className={ styles.arrow } src={ ArrowL } />
+            {/* <img className={ styles.arrow } src={ ArrowL } /> */}
+            <ArrowL viewBox={ "0 0 16 32" } className={ styles.arrow }/>
           </button>
 
           <button
           className={ styles.buttonR }
           onClick={ this.clickRight }
           disabled ={ disabledR }>
-            <img className={ styles.arrow } src={ ArrowR } />
+            {/* <img className={ styles.arrow } src={ ArrowR } /> */}
+            <ArrowR viewBox={ "0 0 16 32" } className={ styles.arrow }/>
           </button>
         </div>
       </div>
@@ -84,4 +86,3 @@ class Carousel extends React.Component {
 }
 
 export default Carousel;
-
