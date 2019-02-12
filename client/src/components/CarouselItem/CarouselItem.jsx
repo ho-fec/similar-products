@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './CarouselItem.css';
 import Image from '../Image';
-import star from '../../assets/carousel-star.svg';
+import Stars from '../Stars';
 import Love from '../Love';
 
 class Entry extends React.Component {
@@ -30,13 +30,15 @@ class Entry extends React.Component {
           <div className={ styles.itemContainer2 }>
             <div className={ styles.itemContainer3 }>
               <Image item={ this.props.item } />
-              <button className={ styles.moreInfo }>
+              <button type='button' className={ styles.moreInfo }>
                 Quick Look
               </button>
               <div className={ styles.loveContainer }>
                 <Love />
               </div>
             </div>
+
+            {/* <ProductBadge /> */}
 
             <div className={ styles.name }>
               <span className={ styles.category }>
@@ -52,13 +54,7 @@ class Entry extends React.Component {
             </div>
 
             <div className={ styles.starContainer }>
-
-              <img className={ styles.star } src={ star }/>
-              <img className={ styles.star } src={ star }/>
-              <img className={ styles.star } src={ star }/>
-              <img className={ styles.star } src={ star }/>
-              <img className={ styles.star } src={ star }/>
-
+              <Stars />
             </div>
           </div>
         </div>

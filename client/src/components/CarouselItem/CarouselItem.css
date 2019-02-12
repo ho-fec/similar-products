@@ -54,7 +54,7 @@
   left: 0px;
   width: 100%;
   text-align: center;
-  color: rgb(255, 255, 255);
+  color: rgb(255, 255, 255) !important;
   line-height: 1;
   font-weight: 500;
   padding-top: 8px;
@@ -67,8 +67,11 @@
   transition: opacity .2s ease 0s;
 }
 
-.moreInfo:hover {
+a.moreInfo {
   color: white;
+}
+
+.moreInfo:hover {
   background-color: rgb(117, 117, 117);
 }
 
