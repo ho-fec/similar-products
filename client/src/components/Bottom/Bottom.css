@@ -9,6 +9,8 @@
   margin-left: 3px;
   margin-right: 3px;
   line-height: 0px;
+  max-width: 10px;
+  max-height: 10px;
   background-color: transparent;
   background-repeat: no-repeat;
   border: none;
