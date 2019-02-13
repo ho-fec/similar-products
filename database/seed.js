@@ -17,7 +17,7 @@ function save(data) {
       loves: entry.loves,
       exclusive: entry.exclusive,
       price: entry.price,
-      image: faker.image.fashion()
+      image: faker.image.imageUrl(300,300,"animals")
     }).save()
       .catch(err => console.log(err));
   })
