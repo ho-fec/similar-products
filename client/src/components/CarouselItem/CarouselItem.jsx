@@ -38,7 +38,11 @@ class Entry extends React.Component {
               </div>
             </div>
 
-            {/* <ProductBadge /> */}
+            <div
+            className={ styles.badgeContainer }
+            style={ this.props.badge ? { opacity: 1 } : { opacity: 0 } }>
+              <div className={ styles.badge }>New</div>
+            </div>
 
             <div className={ styles.name }>
               <span className={ styles.category }>

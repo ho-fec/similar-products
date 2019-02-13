@@ -68,7 +68,8 @@ class Carousel extends React.Component {
                 name={ item.product_name }
                 category={ item.category }
                 price={ item.price }
-                stars={ item.stars }/>)}
+                stars={ item.stars }
+                badge={ item.badge }/>)}
             </div>
           </div>
 
