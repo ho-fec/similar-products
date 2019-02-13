@@ -3,6 +3,7 @@ import CarouselItem from '../CarouselItem';
 import styles from './Carousel.css';
 import ArrowL from './ArrowL.jsx';
 import ArrowR from './ArrowR.jsx';
+import Bottom from '../Bottom';
 import axios from 'axios';
 
 class Carousel extends React.Component {
@@ -12,6 +13,7 @@ class Carousel extends React.Component {
       list: [],
       scroll: 0
     }
+    this.clickBottom = this.clickBottom.bind(this);
     this.clickLeft = this.clickLeft.bind(this);
     this.clickRight = this.clickRight.bind(this);
   }
@@ -21,6 +23,10 @@ class Carousel extends React.Component {
       .get('/item')
       .then(({ data }) => this.setState({ list: [...data] }))
       .catch(err => console.log(err))
+  }
+
+  clickBottom(num) {
+    this.setState({ scroll: num });
   }
   
   clickLeft(e) {
@@ -38,11 +44,12 @@ class Carousel extends React.Component {
   render() {
     let { scroll } = this.state;
     let move = styles.innerContainer;
-    let disabledL, disabledR = false;
+    let disabledL, disabledM, disabledR = false;
 
     if (scroll === 0) {
       disabledL = true;
     } else if (scroll === 1) {
+      disabledM = true;
       move = styles.r1;
     } else if (scroll === 2) {
       disabledR = true;
@@ -61,7 +68,8 @@ class Carousel extends React.Component {
                 name={ item.product_name }
                 category={ item.category }
                 price={ item.price }
-                stars={ item.stars }/>)}
+                stars={ item.stars }
+                badge={ item.badge }/>)}
             </div>
           </div>
 
@@ -69,17 +77,21 @@ class Carousel extends React.Component {
           className={ styles.buttonL }
           onClick={ this.clickLeft }
           disabled={ disabledL }>
-            <ArrowL viewBox={ "0 0 16 32" } className={ styles.arrow }/>
+            <ArrowL viewBox={ '0 0 16 32' } className={ styles.arrow }/>
           </button>
-
           <button
           className={ styles.buttonR }
           onClick={ this.clickRight }
-          disabled ={ disabledR }>
-            <ArrowR viewBox={ "0 0 16 32" } className={ styles.arrow }/>
+          disabled={ disabledR }>
+            <ArrowR viewBox={ '0 0 16 32' } className={ styles.arrow }/>
           </button>
+
         </div>
-        {/* <Radio /> */}
+        <Bottom
+        dL={ disabledL }
+        dM={ disabledM }
+        dR={ disabledR }
+        click={ this.clickBottom }/>
       </div>
     )
   }

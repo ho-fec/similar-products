@@ -49,10 +49,10 @@
   width: 32px;
   overflow: hidden;
   background-color: transparent;
-  background-repeat:no-repeat;
+  background-repeat: no-repeat;
   border: none;
-  cursor:pointer;
-  outline:none;
+  cursor: pointer;
+  outline: none;
 }
 
 .buttonR {
@@ -66,10 +66,10 @@
   width: 32px;
   overflow: hidden;
   background-color: transparent;
-  background-repeat:no-repeat;
+  background-repeat: no-repeat;
   border: none;
-  cursor:pointer;
-  outline:none;
+  cursor: pointer;
+  outline: none;
 }
 
 button:not(:disabled):hover{
