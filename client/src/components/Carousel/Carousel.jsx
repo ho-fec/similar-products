@@ -13,6 +13,7 @@ class Carousel extends React.Component {
       list: [],
       scroll: 0
     }
+    this.clickBottom = this.clickBottom.bind(this);
     this.clickLeft = this.clickLeft.bind(this);
     this.clickRight = this.clickRight.bind(this);
   }
@@ -22,6 +23,10 @@ class Carousel extends React.Component {
       .get('/item')
       .then(({ data }) => this.setState({ list: [...data] }))
       .catch(err => console.log(err))
+  }
+
+  clickBottom(e) {
+    this.setState({ scroll: Number(e.target.id) });
   }
   
   clickLeft(e) {
@@ -39,11 +44,12 @@ class Carousel extends React.Component {
   render() {
     let { scroll } = this.state;
     let move = styles.innerContainer;
-    let disabledL, disabledR = false;
+    let disabledL, disabledM, disabledR = false;
 
     if (scroll === 0) {
       disabledL = true;
     } else if (scroll === 1) {
+      disabledM = true;
       move = styles.r1;
     } else if (scroll === 2) {
       disabledR = true;
@@ -72,15 +78,19 @@ class Carousel extends React.Component {
           disabled={ disabledL }>
             <ArrowL viewBox={ '0 0 16 32' } className={ styles.arrow }/>
           </button>
-
           <button
           className={ styles.buttonR }
           onClick={ this.clickRight }
           disabled={ disabledR }>
             <ArrowR viewBox={ '0 0 16 32' } className={ styles.arrow }/>
           </button>
+
         </div>
-        <Bottom />
+        <Bottom
+        dL={ disabledL }
+        dM={ disabledM }
+        dR={ disabledR }
+        click={ this.clickBottom }/>
       </div>
     )
   }

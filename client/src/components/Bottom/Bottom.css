@@ -9,8 +9,6 @@
   margin-left: 3px;
   margin-right: 3px;
   line-height: 0px;
-  width: 10px;
-  height: 10px;
   background-color: transparent;
   background-repeat: no-repeat;
   border: none;
@@ -18,9 +16,20 @@
   outline: none;
 }
 
+.slideButton:disabled {
+  cursor: default;
+}
+
 .circle {
   width: 10px;
   height: 10px;
   background-color: rgb(204, 204, 204);
+  border-radius: 99999px;
+}
+
+.slideButton:disabled > .circle {
+  width: 10px;
+  height: 10px;
+  background-color: black;
   border-radius: 99999px;
 }
