@@ -1,4 +1,7 @@
 const SimilarList = require('./index.js');
+const mockData = require('../MOCK_DATA.js');
+const { randomNumberDec, randomNumberInt } = require('./helpers.js');
+const faker = require('faker');
 
 function save(data) {
   data.forEach(entry => {

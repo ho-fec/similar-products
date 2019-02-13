@@ -1,7 +1,4 @@
 const mongoose = require('mongoose');
-const mockData = require('../MOCK_DATA.js');
-const { randomNumberDec, randomNumberInt } = require('./helpers.js');
-const faker = require('faker');
 
 mongoose.connect('mongodb://localhost/similarlist', {
   useNewUrlParser: true
