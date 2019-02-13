@@ -31,36 +31,3 @@ const similarSchema = new mongoose.Schema({
 const SimilarList = mongoose.model('Similarlist', similarSchema);
 
 module.exports = SimilarList;
-
-// Uncomment to populate DB with dummy data
-
-// function insertURL(data) {
-//   data.forEach(obj => {
-//     obj.image = "https://picsum.photos/300/300/?random";
-//       });
-//   return data;
-// }
-
-// const newMock = insertURL(mockData);
-
-// function save(data) {
-//   data.forEach(entry => {
-//     entry = new SimilarList({
-//       product_name: entry.product_name,
-//       category: entry.category,
-//       size: entry.size,
-//       description: entry.description,
-//       sku: randomNumberInt(1000000, 2000000),
-//       stars: randomNumberDec(0, 5),
-//       reviews: entry.reviews,
-//       badge: Math.random() >= 0.9,
-//       loves: entry.loves,
-//       exclusive: entry.exclusive,
-//       price: entry.price,
-//       image: faker.image.fashion()
-//     }).save()
-//       .catch(err => console.log(err));
-//   })
-// }
-
-// save(mockData);
