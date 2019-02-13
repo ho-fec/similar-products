@@ -44,7 +44,11 @@ class Entry extends React.Component {
               onClick={ this.showModal }>
                 Quick Look
               </button>
-              <Modal onClose={ this.showModal } show={ this.state.show }/>
+              <Modal
+              onClose={ this.showModal }
+              show={ this.state.show }
+              badge={ this.props.badge }
+              item={ this.props.item }/>
 
               <div className={ styles.loveContainer }>
                 <Love />

@@ -3,7 +3,6 @@
   position: relative;
   padding: 32px;
 }
-
 .flexTop {
   display: flex;
   margin-bottom: 24px;
@@ -17,9 +16,55 @@
   padding-left: 12px;
   padding-right: 12px;
   display: block;
-  max-width: 0px;
+  min-width: 0px;
   margin-bottom: 24px;
   width: 324px;
+}
+
+.imageContainer2 {
+  display: block;
+  position: relative;
+}
+
+.imageContainer3 {
+  display: block;
+  position: relative;
+  max-width: 100%;
+  width: 300px;
+  cursor: pointer;
+}
+
+.image {
+  display: block;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 100%;
+  width: 100%;
+}
+
+.badgeContainer {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  color: white;
+  font-weight: 700;
+  font-size: 12px;
+  width: 5em;
+}
+
+.badge {
+  display: flex;
+  background-color: black;
+  line-height: 1;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  height: 28px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
 }
 
 .productInfo {

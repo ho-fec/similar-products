@@ -27,20 +27,23 @@ class Modal extends Component {
 
     return (
       createPortal(
-        <div className={ styles.container1 }>
-          <div className={ styles.container2 }>
-            <div className={ styles.dialog }>
-            <div className={styles.box}></div>
-              <ModalBody />
-              <button
-              className={ styles.closeButton }
-              onClick={ e => this.props.onClose(e) }>
-                <Close className={ styles.closeSVG } viewBox={ '0 0 17 17' }/>
-              </button>
+        <>
+          <div className={ styles.container1 }>
+            <div className={ styles.container2 }>
+              <div className={ styles.dialog }>
+                <ModalBody
+                badge={ this.props.badge }
+                item={ this.props.item }/>
+                <button
+                className={ styles.closeButton }
+                onClick={ e => this.props.onClose(e) }>
+                  <Close className={ styles.closeSVG } viewBox={ '0 0 17 17' }/>
+                </button>
+              </div>
             </div>
           </div>
           <div className={ styles.bg }></div>
-        </div>,
+        </>,
         this.modalElement)
     );
   }
