@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 const mockData = require('../MOCK_DATA.js');
+const { randomNumberDec, randomNumberInt } = require('./helpers.js');
+const faker = require('faker');
 
 mongoose.connect('mongodb://localhost/similarlist', {
   useNewUrlParser: true
@@ -16,8 +18,10 @@ const similarSchema = new mongoose.Schema({
   category: String,
   size: String,
   description: String,
+  sku: Number,
   stars: Number,
   reviews: Number,
+  badge: Boolean,
   loves: Number,
   exclusive: Boolean,
   price: String,
@@ -46,12 +50,14 @@ module.exports = SimilarList;
 //       category: entry.category,
 //       size: entry.size,
 //       description: entry.description,
-//       stars: entry.stars,
+//       sku: randomNumberInt(1000000, 2000000),
+//       stars: randomNumberDec(0, 5),
 //       reviews: entry.reviews,
+//       badge: Math.random() >= 0.9,
 //       loves: entry.loves,
 //       exclusive: entry.exclusive,
 //       price: entry.price,
-//       image: entry.image
+//       image: faker.image.fashion()
 //     }).save()
 //       .catch(err => console.log(err));
 //   })
