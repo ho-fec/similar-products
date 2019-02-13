@@ -1,0 +1,39 @@
+.box {
+  display: block;
+  position: relative;
+  padding: 32px;
+}
+
+.flexTop {
+  display: flex;
+  margin-bottom: 24px;
+  margin-left: -12px;
+  margin-right: -12px;
+  flex-flow: row wrap;
+}
+
+.imageContainer1 {
+  flex-basis: auto;
+  padding-left: 12px;
+  padding-right: 12px;
+  display: block;
+  max-width: 0px;
+  margin-bottom: 24px;
+  width: 324px;
+}
+
+.productInfo {
+  padding-left: 12px;
+  padding-right: 12px;
+  display: block;
+  min-width: 0px;
+  margin-bottom: 24px;
+  flex: 1 1 0%;
+}
+
+.flexBot {
+  display: flex;
+  margin-left: -12px;
+  margin-right: -12px;
+  flex-flow: row wrap;
+}

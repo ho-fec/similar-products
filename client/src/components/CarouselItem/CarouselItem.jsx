@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './CarouselItem.css';
+import Modal from '../Modal/ModalContainer';
 import Image from '../Image';
 import Stars from '../Stars';
 import Love from '../Love';
@@ -8,13 +9,19 @@ class Entry extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      loved: false
+      loved: false,
+      show: false
     }
     this.handleLove = this.handleLove.bind(this);
+    this.showModal = this.showModal.bind(this);
   }
 
   handleLove(e) {
-    this.setState({ loved: !this.state.loved })
+    this.setState({ loved: !this.state.loved });
+  }
+
+  showModal(e) {
+    this.setState({ show: !this.state.show });
   }
 
   render() {
@@ -30,9 +37,15 @@ class Entry extends React.Component {
           <div className={ styles.itemContainer2 }>
             <div className={ styles.itemContainer3 }>
               <Image item={ this.props.item } />
-              <button type='button' className={ styles.moreInfo }>
+
+              <button
+              type='button'
+              className={ styles.moreInfo }
+              onClick={ this.showModal }>
                 Quick Look
               </button>
+              <Modal onClose={ this.showModal } show={ this.state.show }/>
+
               <div className={ styles.loveContainer }>
                 <Love />
               </div>

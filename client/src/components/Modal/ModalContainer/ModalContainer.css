@@ -1,0 +1,74 @@
+.container1 {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  backface-visibility: hidden;
+  z-index: 1050;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  -webkit-box-align: center;
+  align-items: center;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.container2 {
+  width: 980px;
+  padding-top: 48px;
+  padding-bottom: 48px;
+  margin: auto;
+}
+
+.dialog {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  color: black;
+  background-color: white;
+  width: 100%;
+}
+
+.closeButton {
+  display: inline-block;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  cursor: pointer;
+  z-index: 1051;
+  font-size: 18px;
+  line-height: 0;
+  transition: opacity .2s ease 0s;
+  padding: 16px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.closeSVG {
+  display: inline-block;
+  height: 1em;
+  fill: currentColor;
+  position: relative;
+  vertical-align: text-bottom;
+  width: 1em;
+  transform: rotate(45deg);
+  transition: transform .2s ease 0s;
+}
+
+.bg {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  backface-visibility: hidden;
+  display: block;
+  background-color: black;
+  opacity: 0.25;
+  z-index: 1049;
+}
