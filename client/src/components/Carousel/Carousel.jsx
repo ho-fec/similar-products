@@ -25,8 +25,8 @@ class Carousel extends React.Component {
       .catch(err => console.log(err))
   }
 
-  clickBottom(e) {
-    this.setState({ scroll: Number(e.target.id) });
+  clickBottom(num) {
+    this.setState({ scroll: num });
   }
   
   clickLeft(e) {

@@ -11,25 +11,22 @@ class Bottom extends Component {
       <div className={ styles.bottom }>
         <button
         type='button'
-        id='1'
         className={ styles.slideButton }
-        onClick={ (e) => this.props.click(e) }
+        onClick={ () => this.props.click(0) }
         disabled={ this.props.dL }>
           <div className={ styles.circle }></div>
         </button>
         <button
         type='button'
-        id='2'
         className={ styles.slideButton }
-        onClick={ (e) => this.props.click(e) }
+        onClick={ () => this.props.click(1) }
         disabled={ this.props.dM }>
           <div className={ styles.circle }></div>
         </button>
         <button
         type='button'
-        id='3'
         className={ styles.slideButton }
-        onClick={ (e) => this.props.click(e) }
+        onClick={ () => this.props.click(2) }
         disabled={ this.props.dR }>
           <div className={ styles.circle }></div>
         </button>
