@@ -5,6 +5,14 @@ import Love from '../../Love';
 class ModalBottomRight extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      hover: false
+    }
+    this.hoverLove = this.hoverLove.bind(this);
+  }
+
+  hoverLove() {
+    this.setState({ hover: !this.state.hover });
   }
 
   render() {
@@ -44,11 +52,16 @@ class ModalBottomRight extends Component {
               <button
               type='button'
               className={ styles.loveButton }
-              onClick={ () => this.props.handleLove() }>
+              onClick={ () => this.props.handleLove() }
+              onMouseEnter={ this.hoverLove }
+              onMouseLeave={ this.hoverLove }
+              >
               <Love
+              hover={ this.state.hover }
               loved={ this.props.loved }
               style={{ 'marginRight': '0.375em' }}
               />
+              <span className={ !this.props.loved ? styles.span1 : styles.span2 }></span>
               </button>
             </div>
           </div>
