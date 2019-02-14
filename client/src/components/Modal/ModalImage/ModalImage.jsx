@@ -1,11 +1,11 @@
 import React from 'react';
 import styles from './ModalImage.css';
 
-export default ({ item, badge }) => (
+export default ({ image, badge }) => (
   <div className={ styles.imageContainer1 }>
     <div className={ styles.imageContainer2 }>
       <div className={ styles.imageContainer3 }>
-        <img src={ item }/>
+        <img src={ image }/>
       </div>
 
       <div
