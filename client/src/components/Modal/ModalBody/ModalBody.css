@@ -36,6 +36,10 @@
   outline: 0px;
 }
 
+.productNameContainer:hover {
+  text-decoration: underline;
+}
+
 .category {
   display: block;
   font-weight: 700;
@@ -57,6 +61,32 @@
   word-wrap: break-word;
   margin-left: .5em;
   margin-right: .5em;
+}
+
+.description {
+  display: block;
+  text-align: left;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.descriptionText {
+  display: block;
+}
+
+.productLinkContainer {
+  display: block;
+  text-align: right;
+}
+
+.productLink {
+  display: inline-block;
+  color: rgb(20, 112, 245);
+  cursor: pointer;
+}
+
+.productLink:hover {
+  text-decoration: underline;
 }
 
 .flexBot {

@@ -11,6 +11,7 @@
 .imageContainer2 {
   display: block;
   position: relative;
+  cursor: pointer;
 }
 
 .imageContainer3 {
