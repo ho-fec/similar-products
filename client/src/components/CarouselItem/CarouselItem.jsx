@@ -47,12 +47,19 @@ class Entry extends React.Component {
               <Modal
               onClose={ this.showModal }
               show={ this.state.show }
-              badge={ this.props.badge }
-              item={ this.props.item }
-              category={ this.props.category }
               name={ this.props.name }
+              category={ this.props.category }
+              size={ this.props.size }
+              description={ this.props.description }
               sku={ this.props.sku }
-              size={ this.props.size }/>
+              stars={ this.props.stars }
+              reviews={ this.props.reviews }
+              badge={ this.props.badge }
+              loves={ this.props.loves }
+              exclusive={ this.props.exclusive }
+              price={ this.props.price }
+              image={ this.props.image }
+              />
 
               <div className={ styles.loveContainer }>
                 <Love />
