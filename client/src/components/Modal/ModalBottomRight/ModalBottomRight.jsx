@@ -23,7 +23,7 @@ class ModalBottomRight extends Component {
             { this.props.price }
           </div>
           <div className={ styles.promo }>
-            Free shipping
+            { this.props.free ? 'Free shipping' : '' }
           </div>
         </div>
         <div className={ styles.shopContainer }>

@@ -75,3 +75,9 @@
   font-size: 12px;
   line-height: 1.25;
 }
+
+.bullet {
+  overflow-wrap: break-word;
+  margin-left: 4px;
+  margin-right: 4px;
+}

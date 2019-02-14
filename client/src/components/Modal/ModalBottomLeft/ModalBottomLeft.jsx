@@ -8,10 +8,12 @@ class ModalBottomLeft extends Component {
   }
 
   render() {
-    let { loves } = this.props;
+    let { loves, exclusive, online, limited } = this.props;
     if (loves > 1000) {
       loves = Math.round(loves / 1000) + 'K';
     }
+
+    let bullet = <span className={ styles.bullet }>·</span>;
 
     return (
       <div className={ styles.container }>
@@ -37,7 +39,13 @@ class ModalBottomLeft extends Component {
           </span>
         </div>
         <div className={ styles.lower }>
-        <span>{ this.props.exclusive ? 'exclusive' : '' }</span>
+          <span>
+          { exclusive ? 'exclusive' : '' }
+          { (exclusive && online) || (exclusive && limited) ? bullet : '' }
+          { online ? 'online only' : '' }
+          { online && limited ? bullet : '' }
+          { limited ? 'limited edition' : '' }
+          </span>
         </div>
       </div>
     );
