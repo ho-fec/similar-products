@@ -13,7 +13,7 @@ db.once('open', () => console.log('Connected to the database.'));
 const similarSchema = new mongoose.Schema({
   product_name: String,
   category: String,
-  size: String,
+  size: Array,
   description: String,
   sku: Number,
   stars: Number,
@@ -21,6 +21,9 @@ const similarSchema = new mongoose.Schema({
   badge: Boolean,
   loves: Number,
   exclusive: Boolean,
+  online_only: Boolean,
+  limited_edition: Boolean,
+  free_shipping: Boolean,
   price: String,
   image: String
 });
