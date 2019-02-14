@@ -64,12 +64,19 @@ class Carousel extends React.Component {
               {this.state.list.map((item, i) =>
               <CarouselItem
                 key={ i }
-                item={ item.image }
                 name={ item.product_name }
                 category={ item.category }
-                price={ item.price }
+                size={ item.size }
+                description={ item.description }
+                sku={ item.sku }
                 stars={ item.stars }
-                badge={ item.badge }/>)}
+                reviews={ item.reviews }
+                badge={ item.badge }
+                loves={ item.loves }
+                exclusive={ item.exclusive }
+                price={ item.price }
+                image={ item.image }
+                />)}
             </div>
           </div>
 

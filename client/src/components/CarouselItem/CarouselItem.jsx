@@ -48,7 +48,11 @@ class Entry extends React.Component {
               onClose={ this.showModal }
               show={ this.state.show }
               badge={ this.props.badge }
-              item={ this.props.item }/>
+              item={ this.props.item }
+              category={ this.props.category }
+              name={ this.props.name }
+              sku={ this.props.sku }
+              size={ this.props.size }/>
 
               <div className={ styles.loveContainer }>
                 <Love />
