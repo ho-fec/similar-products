@@ -36,7 +36,7 @@ class Entry extends React.Component {
         <div className={ styles.itemContainer1 }>
           <div className={ styles.itemContainer2 }>
             <div className={ styles.itemContainer3 }>
-              <Image item={ this.props.item } />
+              <Image image={ this.props.image } />
 
               <button
               type='button'
