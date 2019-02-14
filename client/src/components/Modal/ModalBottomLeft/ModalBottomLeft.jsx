@@ -8,6 +8,11 @@ class ModalBottomLeft extends Component {
   }
 
   render() {
+    let { loves } = this.props;
+    if (loves > 1000) {
+      loves = Math.round(loves / 1000) + 'K';
+    }
+    
     return (
       <div className={ styles.container }>
         <div className={ styles.upper }>
@@ -27,7 +32,7 @@ class ModalBottomLeft extends Component {
               </svg>
             </span>
             <span className={ styles.loveCount }>
-              { this.props.loved ? this.props.loves + 1 : this.props.loves }
+              { this.props.loved ? loves + 1 : loves }
             </span> loves
           </span>
         </div>
