@@ -47,7 +47,7 @@ function ModalBody(props) {
         reviews={ props.reviews }
         loves={ props.loves }
         exclusive={ props.exclusive }/>
-        {/* <ModalBottomRight /> */}
+        <ModalBottomRight price={ props.price }/>
       </div>
     </div>
   );
