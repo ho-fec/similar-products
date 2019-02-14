@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import CarouselItem from '../CarouselItem';
 import styles from './Carousel.css';
 import ArrowL from './ArrowL.jsx';
@@ -6,7 +6,7 @@ import ArrowR from './ArrowR.jsx';
 import Bottom from '../Bottom';
 import axios from 'axios';
 
-class Carousel extends React.Component {
+class Carousel extends Component {
   constructor(props) {
     super(props);
     this.state = {
