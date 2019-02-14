@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styles from './CarouselItem.css';
 import Modal from '../Modal/ModalContainer';
 import Image from '../Image';
 import Stars from '../Stars';
 import Love from '../Love';
 
-class Entry extends React.Component {
+class Entry extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -62,7 +62,11 @@ class Entry extends React.Component {
               />
 
               <div className={ styles.loveContainer }>
-                <Love />
+                <button
+                className={ styles.loveButton }
+                onClick={ this.handleLove }>
+                  <Love loved={ this.state.loved } />
+                </button>
               </div>
             </div>
 

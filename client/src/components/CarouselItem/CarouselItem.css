@@ -82,6 +82,20 @@ a.moreInfo {
   right: 0px;
 }
 
+.loveButton {
+  display: inline-block;
+  text-align: center;
+  line-height: 0;
+  width: 24px;
+  height: 24px;
+  font-size: 15px;
+  background-color: transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  outline:none;
+}
+
 .badgeContainer {
   position: absolute;
   top: 0px;
