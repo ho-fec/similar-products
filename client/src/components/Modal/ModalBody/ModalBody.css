@@ -23,6 +23,42 @@
   flex: 1 1 0%;
 }
 
+.prodeuctInfo:hover {
+  text-decoration: underline;
+}
+
+.productNameContainer {
+  display: block;
+  cursor: pointer;
+  margin-bottom: 4px;
+  font-size: 16px;
+  line-height: 1.25;
+  outline: 0px;
+}
+
+.category {
+  display: block;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.name {
+  display: block;
+}
+
+.sizeSKU {
+  display: block;
+  color: rgb(117, 117, 117);
+  margin-top: 4px;
+  font-size: 12px;
+}
+
+.bullet {
+  word-wrap: break-word;
+  margin-left: .5em;
+  margin-right: .5em;
+}
+
 .flexBot {
   display: flex;
   margin-left: -12px;
