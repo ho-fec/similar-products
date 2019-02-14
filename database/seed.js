@@ -15,10 +15,10 @@ function save(data) {
       reviews: entry.reviews,
       badge: Math.random() >= 0.9,
       loves: entry.loves,
-      exclusive: Math.random() >= 0.8,
-      online_only: Math.random() >= 0.8,
-      limited_edition: Math.random() >= 0.9,
-      free_shipping: Math.random() >= 0.8,
+      exclusive: Math.random() >= 0.7,
+      online_only: Math.random() >= 0.7,
+      limited_edition: Math.random() >= 0.8,
+      free_shipping: Math.random() >= 0.7,
       price: `$${randomNumberDec(1, 200)}`,
       image: faker.image.imageUrl(300,300,"animals")
     }).save()
