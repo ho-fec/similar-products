@@ -50,6 +50,7 @@ class Entry extends Component {
               handleLove={ this.handleLove }
 
               show={ this.state.show }
+              props={ this.props }
               name={ this.props.name }
               category={ this.props.category }
               size={ this.props.size }
@@ -60,6 +61,9 @@ class Entry extends Component {
               badge={ this.props.badge }
               loves={ this.props.loves }
               exclusive={ this.props.exclusive }
+              online={ this.props.online }
+              limited={ this.props.limited }
+              free={ this.props.free }
               price={ this.props.price }
               image={ this.props.image }
               />

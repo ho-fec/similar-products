@@ -74,6 +74,9 @@ class Carousel extends Component {
                 badge={ item.badge }
                 loves={ item.loves }
                 exclusive={ item.exclusive }
+                online={ item.online_only }
+                limited={ item.limited_edition }
+                free={ item.free_shipping }
                 price={ item.price }
                 image={ item.image }
                 />)}

@@ -36,7 +36,10 @@ class Modal extends Component {
               <div className={ styles.dialog }>
                 <div className={ styles.box }>
                   <div className={ styles.flexTop }>
-                    <ModalImage image={ this.props.image } badge={ this.props.badge }/>
+                    <ModalImage
+                    image={ this.props.image }
+                    badge={ this.props.badge }
+                    />
                     <ModalInfo
                     name={ this.props.name }
                     category={ this.props.category }
@@ -51,18 +54,25 @@ class Modal extends Component {
                     stars={ this.props.stars }
                     reviews={ this.props.reviews }
                     loves={ this.props.loves }
-                    exclusive={ this.props.exclusive }/>
+                    exclusive={ this.props.exclusive }
+                    online={ this.props.online }
+                    limited={ this.props.limited }
+                    />
                     <ModalBottomRight
                     loved={ this.props.loved }
                     handleLove={ this.props.handleLove }
-                    price={ this.props.price }/>
+                    free={ this.props.free }
+                    price={ this.props.price }
+                    />
                   </div>
                 </div>
 
                 <button
                 className={ styles.closeButton }
                 onClick={ e => this.props.onClose(e) }>
-                  <Close className={ styles.closeSVG } viewBox={ '0 0 17 17' }/>
+                  <Close
+                  className={ styles.closeSVG }
+                  viewBox={ '0 0 17 17' }/>
                 </button>
               </div>
             </div>
