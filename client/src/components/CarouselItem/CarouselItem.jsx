@@ -17,7 +17,6 @@ class Entry extends Component {
   }
 
   handleLove(e) {
-    console.log(this.state.loved);
     this.setState({ loved: !this.state.loved });
   }
 
