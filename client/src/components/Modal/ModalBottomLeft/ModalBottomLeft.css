@@ -24,6 +24,10 @@
   outline: 0px;
 }
 
+.reviewContainer:hover {
+  text-decoration: underline;
+}
+
 .starContainer {
   display: inline-block;
   top: 0.625em;

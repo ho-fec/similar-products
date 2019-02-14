@@ -5,7 +5,6 @@ import ModalBottomLeft from '../ModalBottomLeft';
 import ModalBottomRight from '../ModalBottomRight';
 
 function ModalBody(props) {
-  console.log(props);
   const oz = (ml) => {
     return (ml * 0.033814).toFixed(1);
   }
