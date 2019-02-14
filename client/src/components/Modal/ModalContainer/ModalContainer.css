@@ -33,6 +33,29 @@
   border-width: 0px;
 }
 
+.box {
+  display: block;
+  position: relative;
+  padding-top: 32px;
+  padding-right: 32px;
+  padding-bottom: 32px;
+  padding-left: 32px;
+}
+.flexTop {
+  display: flex;
+  margin-bottom: 24px;
+  margin-left: -12px;
+  margin-right: -12px;
+  flex-flow: row wrap;
+}
+
+.flexBot {
+  display: flex;
+  margin-left: -12px;
+  margin-right: -12px;
+  flex-flow: row wrap;
+}
+
 .closeButton {
   display: inline-block;
   position: absolute;
