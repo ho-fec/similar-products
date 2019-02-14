@@ -5,20 +5,20 @@
   display: block;
   min-width: 0px;
   margin-bottom: 24px;
-  width: 324px;
+  max-width: 300px;
 }
 
 .imageContainer2 {
   display: block;
   position: relative;
   cursor: pointer;
+  width: 300px;
 }
 
 .imageContainer3 {
   display: block;
   position: relative;
   max-width: 100%;
-  width: 300px;
 }
 
 .image {
