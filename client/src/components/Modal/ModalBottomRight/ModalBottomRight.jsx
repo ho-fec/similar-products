@@ -5,7 +5,6 @@ import Love from '../../Love';
 class ModalBottomRight extends Component {
   constructor(props) {
     super(props);
-    this.options = [1,2,3,4,5,6,7,8,9,10];
   }
 
   render() {
@@ -42,8 +41,13 @@ class ModalBottomRight extends Component {
               Add to basket
             </button>
             <div className={ styles.loveContainer }>
-              <button type='button' className={ styles.loveButton }>
-              <Love />
+              <button
+              type='button'
+              className={ styles.loveButton }
+              onClick={ () => this.props.handleLove() }>
+              <Love
+              loved={ this.props.loved }
+              />
               </button>
             </div>
           </div>

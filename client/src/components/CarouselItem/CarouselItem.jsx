@@ -17,6 +17,7 @@ class Entry extends Component {
   }
 
   handleLove(e) {
+    console.log(this.state.loved);
     this.setState({ loved: !this.state.loved });
   }
 
@@ -46,6 +47,9 @@ class Entry extends Component {
               </button>
               <Modal
               onClose={ this.showModal }
+              loved={ this.state.loved }
+              handleLove={ this.handleLove }
+
               show={ this.state.show }
               name={ this.props.name }
               category={ this.props.category }

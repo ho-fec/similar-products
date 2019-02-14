@@ -32,6 +32,9 @@ class Modal extends Component {
             <div className={ styles.container2 }>
               <div className={ styles.dialog }>
                 <ModalBody
+                loved={ this.props.loved }
+                handleLove={ this.props.handleLove }
+
                 name={ this.props.name }
                 category={ this.props.category }
                 size={ this.props.size }
