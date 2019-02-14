@@ -27,7 +27,7 @@ class ModalBottomLeft extends Component {
               </svg>
             </span>
             <span className={ styles.loveCount }>
-              { this.props.loves }
+              { this.props.loved ? this.props.loves + 1 : this.props.loves }
             </span> loves
           </span>
         </div>

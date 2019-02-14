@@ -43,6 +43,7 @@ function ModalBody(props) {
       </div>
       <div className={ styles.flexBot }>
         <ModalBottomLeft
+        loved={ props.loved }
         stars={ props.stars }
         reviews={ props.reviews }
         loves={ props.loves }
