@@ -47,6 +47,7 @@ class ModalBottomRight extends Component {
               onClick={ () => this.props.handleLove() }>
               <Love
               loved={ this.props.loved }
+              style={{ 'marginRight': '0.375em' }}
               />
               </button>
             </div>
