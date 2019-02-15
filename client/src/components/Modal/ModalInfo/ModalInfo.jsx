@@ -4,12 +4,32 @@ import styles from './ModalInfo.css';
 class ModalInfo extends Component {
   constructor(props) {
     super(props);
+    this.state ={
+      single: true,
+      selected: 0
+    }
+    this.selectSize = this.selectSize.bind(this);
+  }
+
+  componentDidMount() {
+    if (this.props.size.length > 1) {
+      this.setState({ single: false });
+    }
+  }
+
+  selectSize(e) {
+    console.log(e.target.name);
+    this.setState({ selected: Number(e.target.name) });
   }
 
   render() {
     const oz = (ml) => {
       return (ml * 0.033814).toFixed(1);
     }
+
+    let { selected } = this.state;
+    let sizeSpan = <span>SIZE { oz(this.props.size[selected]) } oz/ { this.props.size[selected] } mL
+    <span className={ styles.bullet }>•</span></span>;
 
     return (
       <div className={ styles.productInfo }>
@@ -19,8 +39,7 @@ class ModalInfo extends Component {
         </div>
         <div className={ styles.sizeSKU }>
           <span>
-            SIZE { oz(this.props.size) } oz/ { this.props.size }mL
-            <span className={ styles.bullet }>•</span>
+            { this.state ? sizeSpan : '' }
             </span>
             ITEM { this.props.sku }
         </div>
@@ -34,9 +53,28 @@ class ModalInfo extends Component {
             </span>
           </div>
         </div>
-        <div className={ styles.variationText }>
+        <div className={ this.state.single ? styles.hidden : styles.variationText }>
+        SIZE { oz(this.props.size[selected]) } oz/ { this.props.size[selected] } mL
         </div>
-        <div className={ styles.variationBox }>
+        <div className={ this.state.single ? styles.hidden : styles.variationBox }>
+          <div className={ styles.variationWrapper }>
+            {this.props.size.map((item, i) => {
+              return (
+                <div
+                key={ i }
+                className={ styles.variationItem }>
+                  <button
+                  name={ `${i}` }
+                  className={ styles.variationButton }
+                  onClick={ this.selectSize }>
+                    <div className={ styles.buttonContent }>
+                      { oz(item) } oz/ { item } mL
+                    </div>
+                  </button>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     );
