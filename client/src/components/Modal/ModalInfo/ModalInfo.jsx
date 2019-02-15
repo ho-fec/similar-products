@@ -18,8 +18,7 @@ class ModalInfo extends Component {
   }
 
   selectSize(e) {
-    console.log(e.target.name);
-    this.setState({ selected: Number(e.target.name) });
+    this.setState({ selected: Number(e.target.id) });
   }
 
   render() {
@@ -27,7 +26,7 @@ class ModalInfo extends Component {
       return (ml * 0.033814).toFixed(1);
     }
 
-    let { selected } = this.state;
+    let { selected, single } = this.state;
     let sizeSpan = <span>SIZE { oz(this.props.size[selected]) } oz/ { this.props.size[selected] } mL
     <span className={ styles.bullet }>•</span></span>;
 
@@ -39,7 +38,7 @@ class ModalInfo extends Component {
         </div>
         <div className={ styles.sizeSKU }>
           <span>
-            { this.state ? sizeSpan : '' }
+            { single ? sizeSpan : '' }
             </span>
             ITEM { this.props.sku }
         </div>
@@ -53,10 +52,10 @@ class ModalInfo extends Component {
             </span>
           </div>
         </div>
-        <div className={ this.state.single ? styles.hidden : styles.variationText }>
+        <div className={ single ? styles.hidden : styles.variationText }>
         SIZE { oz(this.props.size[selected]) } oz/ { this.props.size[selected] } mL
         </div>
-        <div className={ this.state.single ? styles.hidden : styles.variationBox }>
+        <div className={ single ? styles.hidden : styles.variationBox }>
           <div className={ styles.variationWrapper }>
             {this.props.size.map((item, i) => {
               return (
@@ -64,10 +63,12 @@ class ModalInfo extends Component {
                 key={ i }
                 className={ styles.variationItem }>
                   <button
-                  name={ `${i}` }
                   className={ styles.variationButton }
-                  onClick={ this.selectSize }>
-                    <div className={ styles.buttonContent }>
+                  >
+                    <div
+                    id={i}
+                    className={ styles.buttonContent }
+                    onClick={ this.selectSize }>
                       { oz(item) } oz/ { item } mL
                     </div>
                   </button>
