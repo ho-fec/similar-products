@@ -8,7 +8,7 @@ export default (props) => (
     type='button'
     className={ styles.slideButton }
     onClick={ () => props.click(0) }
-    disabled={ props.dL }>
+    disabled={ props.disabledL }>
       <div className={ styles.circle }></div>
     </button>
 
@@ -16,7 +16,7 @@ export default (props) => (
     type='button'
     className={ styles.slideButton }
     onClick={ () => props.click(1) }
-    disabled={ props.dM }>
+    disabled={ props.disabledM }>
       <div className={ styles.circle }></div>
     </button>
 
@@ -24,7 +24,7 @@ export default (props) => (
     type='button'
     className={ styles.slideButton }
     onClick={ () => props.click(2) }
-    disabled={ props.dR }>
+    disabled={ props.disabledR }>
       <div className={ styles.circle }></div>
     </button>
 

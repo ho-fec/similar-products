@@ -40,15 +40,10 @@ class Carousel extends Component {
   render() {
     let { scroll } = this.state;
     let move = styles.innerContainer;
-    let disabledL, disabledM, disabledR = false;
 
-    if (scroll === 0) {
-      disabledL = true;
-    } else if (scroll === 1) {
-      disabledM = true;
+    if (scroll === 1) {
       move = styles.r1;
     } else if (scroll === 2) {
-      disabledR = true;
       move = styles.r2;
     } 
 
@@ -82,21 +77,21 @@ class Carousel extends Component {
           <button
           className={ styles.buttonL }
           onClick={ this.clickLeft }
-          disabled={ disabledL }>
-            <ArrowL viewBox={ '0 0 16 32' } className={ styles.arrow }/>
+          disabled={ scroll === 0 }>
+            <ArrowL className={ styles.arrow }/>
           </button>
           <button
           className={ styles.buttonR }
           onClick={ this.clickRight }
-          disabled={ disabledR }>
-            <ArrowR viewBox={ '0 0 16 32' } className={ styles.arrow }/>
+          disabled={ scroll === 2 }>
+            <ArrowR className={ styles.arrow }/>
           </button>
 
         </div>
         <Bottom
-        dL={ disabledL }
-        dM={ disabledM }
-        dR={ disabledR }
+        disabledL={ scroll === 0 }
+        disabledM={ scroll === 1 }
+        disabledR={ scroll === 2 }
         click={ this.clickBottom }/>
       </div>
     )
