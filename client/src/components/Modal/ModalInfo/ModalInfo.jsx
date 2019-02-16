@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styles from './ModalInfo.css';
+import { randomNumberInt } from '../../../../../database/helpers.js';
 
 let temp;
 
@@ -63,6 +64,11 @@ class ModalInfo extends Component {
                 </span>
     }
 
+    let variationSKU = this.props.sku;
+    if (hovered) {
+      variationSKU = randomNumberInt(1000000, 2000000);
+    }
+
     return (
       <div className={ styles.productInfo }>
         <div className={ styles.productNameContainer }>
@@ -73,7 +79,7 @@ class ModalInfo extends Component {
           <span>
             { single ? sizeSpan : '' }
             </span>
-            ITEM { this.props.sku }
+            ITEM { variationSKU }
         </div>
         <div className={ styles.description }>
           <div className={ styles.descriptionText }>
