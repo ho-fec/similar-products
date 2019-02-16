@@ -30,15 +30,11 @@ class Carousel extends Component {
   }
   
   clickLeft(e) {
-    if (this.state.scroll > 0) {
-      this.setState({ scroll: this.state.scroll - 1 });
-    }
+    this.setState({ scroll: this.state.scroll - 1 });
   }
 
   clickRight(e) {
-    if (this.state.scroll < 2) {
-      this.setState({ scroll: this.state.scroll + 1 });
-    }
+    this.setState({ scroll: this.state.scroll + 1 });
   }
 
   render() {
