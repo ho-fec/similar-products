@@ -18,8 +18,12 @@ class ModalInfo extends Component {
   }
 
   selectSize(e) {
-    this.setState({ selected: Number(e.target.id) });
+    this.setState({ selected: e.target.id });
   }
+
+  // onHover(e) {
+
+  // }
 
   render() {
     const oz = (ml) => {
@@ -63,10 +67,10 @@ class ModalInfo extends Component {
                 key={ i }
                 className={ styles.variationItem }>
                   <button
-                  className={ styles.variationButton }
+                  className={ item === this.props.size[selected] ? styles.variationButtonSelect : styles.variationButton }
                   >
                     <div
-                    id={i}
+                    id={ i }
                     className={ styles.buttonContent }
                     onClick={ this.selectSize }>
                       { oz(item) } oz/ { item } mL
