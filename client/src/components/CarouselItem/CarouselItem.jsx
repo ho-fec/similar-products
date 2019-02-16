@@ -26,10 +26,6 @@ class Entry extends Component {
 
   render() {
     let { loved } = this.state;
-    let loveStatus = styles.love;
-    if (loved) {
-      loveStatus = styles.loved;
-    }
 
     return (
       <div className={ styles.entry }>

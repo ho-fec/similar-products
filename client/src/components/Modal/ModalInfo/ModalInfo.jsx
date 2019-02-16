@@ -7,7 +7,7 @@ let temp;
 class ModalInfo extends Component {
   constructor(props) {
     super(props);
-    this.state ={
+    this.state = {
       single: true,
       selected: 0,
       hovered: false,
@@ -50,23 +50,21 @@ class ModalInfo extends Component {
 
     let { selected, single, hovered, hoverIndex } = this.state;
 
-    let sizeSpan = <span>SIZE { oz(this.props.size[selected]) } oz/ { this.props.size[selected] } mL
-    <span className={ styles.bullet }>•</span></span>;
+    let sizeSpan;
+    if (!hovered) {
+      sizeSpan = <span>SIZE { oz(this.props.size[selected]) } oz/ { this.props.size[selected] } mL
+        <span className={ styles.bullet }>•</span></span>;
+    }
 
     let variationSize = '';
     if (!single && !hovered) {
       variationSize = <span className={ styles.variationText }>
-                  SIZE { oz(this.props.size[selected]) } oz/ { this.props.size[selected] } mL
-                </span>
+        SIZE { oz(this.props.size[selected]) } oz/ { this.props.size[selected] } mL
+      </span>
     } else if (! single && hovered) {
       variationSize = <span className={ styles.variationText }>
-                  SIZE { oz(this.props.size[hoverIndex]) } oz/ { this.props.size[hoverIndex] } mL
-                </span>
-    }
-
-    let variationSKU = this.props.sku;
-    if (hovered) {
-      variationSKU = randomNumberInt(1000000, 2000000);
+        SIZE { oz(this.props.size[hoverIndex]) } oz/ { this.props.size[hoverIndex] } mL
+      </span>
     }
 
     return (
@@ -79,7 +77,7 @@ class ModalInfo extends Component {
           <span>
             { single ? sizeSpan : '' }
             </span>
-            ITEM { variationSKU }
+            ITEM { this.props.sku }
         </div>
         <div className={ styles.description }>
           <div className={ styles.descriptionText }>
