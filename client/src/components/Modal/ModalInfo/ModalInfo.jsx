@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 import styles from './ModalInfo.css';
-import { randomNumberInt } from '../../../../../database/helpers.js';
-
-let temp;
 
 class ModalInfo extends Component {
   constructor(props) {
@@ -29,7 +26,6 @@ class ModalInfo extends Component {
   }
 
   onHover(e) {
-    temp = this.state.selected;
     this.setState({
       hovered: true,
       hoverIndex: e.target.id
@@ -39,7 +35,6 @@ class ModalInfo extends Component {
   resetSelect(e) {
     this.setState({
       hovered: false,
-      hoverIndex: temp
     });
   }
 

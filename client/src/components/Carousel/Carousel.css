@@ -52,7 +52,6 @@
   background-repeat: no-repeat;
   border: none;
   cursor: pointer;
-  outline: none;
 }
 
 .buttonR {
@@ -69,7 +68,6 @@
   background-repeat: no-repeat;
   border: none;
   cursor: pointer;
-  outline: none;
 }
 
 button:not(:disabled):hover{
