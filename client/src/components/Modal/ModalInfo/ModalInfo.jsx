@@ -1,14 +1,20 @@
 import React, { Component } from 'react';
 import styles from './ModalInfo.css';
 
+let temp;
+
 class ModalInfo extends Component {
   constructor(props) {
     super(props);
     this.state ={
       single: true,
-      selected: 0
+      selected: 0,
+      hovered: false,
+      hoverIndex: 0
     }
     this.selectSize = this.selectSize.bind(this);
+    this.onHover = this.onHover.bind(this);
+    this.resetSelect = this.resetSelect.bind(this);
   }
 
   componentDidMount() {
@@ -21,18 +27,41 @@ class ModalInfo extends Component {
     this.setState({ selected: e.target.id });
   }
 
-  // onHover(e) {
+  onHover(e) {
+    temp = this.state.selected;
+    this.setState({
+      hovered: true,
+      hoverIndex: e.target.id
+    });
+  }
 
-  // }
+  resetSelect(e) {
+    this.setState({
+      hovered: false,
+      hoverIndex: temp
+    });
+  }
 
   render() {
     const oz = (ml) => {
       return (ml * 0.033814).toFixed(1);
     }
 
-    let { selected, single } = this.state;
+    let { selected, single, hovered, hoverIndex } = this.state;
+
     let sizeSpan = <span>SIZE { oz(this.props.size[selected]) } oz/ { this.props.size[selected] } mL
     <span className={ styles.bullet }>•</span></span>;
+
+    let variationSize = '';
+    if (!single && !hovered) {
+      variationSize = <span className={ styles.variationText }>
+                  SIZE { oz(this.props.size[selected]) } oz/ { this.props.size[selected] } mL
+                </span>
+    } else if (! single && hovered) {
+      variationSize = <span className={ styles.variationText }>
+                  SIZE { oz(this.props.size[hoverIndex]) } oz/ { this.props.size[hoverIndex] } mL
+                </span>
+    }
 
     return (
       <div className={ styles.productInfo }>
@@ -56,9 +85,7 @@ class ModalInfo extends Component {
             </span>
           </div>
         </div>
-        <div className={ single ? styles.hidden : styles.variationText }>
-        SIZE { oz(this.props.size[selected]) } oz/ { this.props.size[selected] } mL
-        </div>
+        { variationSize }
         <div className={ single ? styles.hidden : styles.variationBox }>
           <div className={ styles.variationWrapper }>
             {this.props.size.map((item, i) => {
@@ -67,12 +94,16 @@ class ModalInfo extends Component {
                 key={ i }
                 className={ styles.variationItem }>
                   <button
+                  id={ i }
                   className={ item === this.props.size[selected] ? styles.variationButtonSelect : styles.variationButton }
+                  onMouseEnter={ this.onHover }
+                  onMouseLeave={ this.resetSelect }
                   >
                     <div
                     id={ i }
                     className={ styles.buttonContent }
-                    onClick={ this.selectSize }>
+                    onClick={ this.selectSize }
+                    >
                       { oz(item) } oz/ { item } mL
                     </div>
                   </button>

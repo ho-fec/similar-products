@@ -104,23 +104,12 @@
   position: relative;
   cursor: pointer;
   padding: 1px;
+  margin-right: 1px;
   border-width: 3px;
   border-style: solid;
   border-radius: 7px;
   border-color: transparent;
   background-color: white;
-}
-
-.variationButtonSelect {
-  position: relative;
-  cursor: default;
-  padding: 1px;
-  border-width: 3px;
-  border-style: solid;
-  border-radius: 7px;
-  border-color: transparent;
-  background-color: white;
-  border-color: rgb(0, 0, 0);
 }
 
 .variationButton:focus {
@@ -130,6 +119,24 @@
 
 .variationButton:hover {
   border-color: rgb(150, 150, 150)
+}
+
+.variationButtonSelect {
+  position: relative;
+  cursor: default;
+  margin-right: 1px;
+  padding: 1px;
+  border-width: 3px;
+  border-style: solid;
+  border-radius: 7px;
+  border-color: transparent;
+  background-color: white;
+  border-color: rgb(0, 0, 0);
+}
+
+.variationButtonSelect:focus {
+  outline-offset: .5px;
+  outline: dashed 1px;
 }
 
 .buttonContent {
