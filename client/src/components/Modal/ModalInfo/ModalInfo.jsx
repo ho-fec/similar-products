@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
 import styles from './ModalInfo.css';
+import { randomNumberInt } from '../../../../../database/helpers.js';
+
 
 class ModalInfo extends Component {
   constructor(props) {
     super(props);
     this.state = {
       single: true,
-      selected: 0,
+      selected: '0',
       hovered: false,
-      hoverIndex: 0
+      hoverIndex: '0',
+      variationSKU: this.props.sku,
+      random: ''
     }
     this.selectSize = this.selectSize.bind(this);
     this.onHover = this.onHover.bind(this);
@@ -30,12 +34,31 @@ class ModalInfo extends Component {
       hovered: true,
       hoverIndex: e.target.id
     });
+
+    if (e.target.id === '0') {
+      this.setState({
+        variationSKU: this.props.sku
+      });
+    } else if (e.target.id !== this.state.selected) {
+      let random = randomNumberInt(1000000, 2000000);
+      this.setState({
+        variationSKU: random,
+        random: random
+      });
+    }
   }
 
   resetSelect(e) {
-    this.setState({
-      hovered: false,
-    });
+    if (this.state.selected === '0') {
+      this.setState({
+        variationSKU: this.props.sku
+      });
+    } else {
+      this.setState({
+        hovered: false,
+        variationSKU: this.state.random
+      });
+    }
   }
 
   render() {
@@ -43,7 +66,7 @@ class ModalInfo extends Component {
       return (ml * 0.033814).toFixed(1);
     }
 
-    let { selected, single, hovered, hoverIndex } = this.state;
+    let { selected, single, hovered, hoverIndex, variationSKU } = this.state;
 
     let sizeSpan;
     if (!hovered) {
@@ -51,12 +74,12 @@ class ModalInfo extends Component {
         <span className={ styles.bullet }>•</span></span>;
     }
 
-    let variationSize = '';
+    let variationSize;
     if (!single && !hovered) {
       variationSize = <span className={ styles.variationText }>
         SIZE { oz(this.props.size[selected]) } oz/ { this.props.size[selected] } mL
       </span>
-    } else if (! single && hovered) {
+    } else if (!single && hovered) {
       variationSize = <span className={ styles.variationText }>
         SIZE { oz(this.props.size[hoverIndex]) } oz/ { this.props.size[hoverIndex] } mL
       </span>
@@ -72,7 +95,7 @@ class ModalInfo extends Component {
           <span>
             { single ? sizeSpan : '' }
             </span>
-            ITEM { this.props.sku }
+            ITEM { variationSKU }
         </div>
         <div className={ styles.description }>
           <div className={ styles.descriptionText }>

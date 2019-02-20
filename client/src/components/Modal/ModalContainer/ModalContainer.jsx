@@ -72,12 +72,14 @@ class Modal extends Component {
                 onClick={ e => this.props.onClose(e) }>
                   <Close
                   className={ styles.closeSVG }
-                  viewBox={ '0 0 17 17' }/>
+                  />
                 </button>
               </div>
             </div>
           </div>
-          <div className={ styles.bg }></div>
+          <div
+          onClick={ e => this.props.onClose(e) }
+          className={ styles.bg }></div>
         </>,
         this.modalElement)
     );
