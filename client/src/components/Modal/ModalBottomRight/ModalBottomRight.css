@@ -119,9 +119,6 @@ option {
 
 .basket:focus {
   box-shadow: rgb(255, 255, 255) 0px 0px 0px 2px, rgb(0, 0, 0) 0px 0px 0px 3px;
-}
-
-.basket:focus {
   border-color: black;
 }
 
@@ -142,7 +139,6 @@ option {
   cursor: pointer;
   font-weight: 700;
   box-sizing: border-box;
-  -webkit-appearance: none;
   color: rgb(0, 0, 0);
   width: 100%;
   padding-right: 0px;

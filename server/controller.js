@@ -10,7 +10,6 @@ const getSimilar = (req, res) => {
 
 const getLike = (req, res) => {
   let { id } = req.params;
-  console.log(req.params);
   LikeList
     .find({ id })
     .then(data => res.status(200).json(data[0].like))
