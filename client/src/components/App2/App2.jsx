@@ -1,5 +1,5 @@
 import React from 'react';
-import Carousel from '../Carousel';
+import Carousel2 from '../Carousel2';
 import styles from './App2.css';
 
 const App2 = () => (
@@ -9,7 +9,7 @@ const App2 = () => (
         You May Also Like
       </div>
     </div>
-    <Carousel />
+    <Carousel2 />
   </div>
 );
 
