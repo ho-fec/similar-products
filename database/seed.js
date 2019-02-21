@@ -1,7 +1,6 @@
-const SimilarList = require('./index.js');
+const { SimilarList, LikeList } = require('./index.js');
 const mockData = require('../MOCK_DATA.js');
-const { randomNumberDec, randomNumberInt, randomNumberArr } = require('./helpers.js');
-const faker = require('faker');
+const { randomNumberDec, randomNumberInt, randomNumberArr, generateSimilarList, generateLikeList } = require('./helpers.js');
 
 const newData = (data) => {
   result = [];
@@ -29,21 +28,7 @@ const newData = (data) => {
 
 const testData = newData(mockData);
 
-const mainList = (data) => {
-  const result = [];
-  for (let i = 1; i <= 100; i++) {
-    let newObj = { id: i, similar: [] };
-
-    for (let i = 0; i < 15; i++) {
-      let getData = data[randomNumberInt(0, 1500)];
-      newObj.similar.push(getData);
-    }
-    result.push(newObj);
-  }
-  return result;
-}
-
-const saveMain = (data) => {
+const saveSimilar = (data) => {
   data.forEach(entry => {
     entry = new SimilarList({
       id: entry.id,
@@ -54,7 +39,19 @@ const saveMain = (data) => {
   })
 }
 
-saveMain(mainList(testData));
+const saveLike = (data) => {
+  data.forEach(entry => {
+    entry = new LikeList({
+      id: entry.id,
+      like: entry.like
+    })
+    .save()
+    .catch(err => console.log(err));
+  })
+}
+
+saveSimilar(generateSimilarList(testData));
+saveLike(generateLikeList(testData));
 
 // function save(data) {
 //   data.forEach(entry => {

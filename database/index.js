@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/similarlist', {
+mongoose.connect('mongodb://localhost/similarandlike', {
   useNewUrlParser: true
 });
 
@@ -17,24 +17,18 @@ const similarSchema = new mongoose.Schema({
   similar: Array
 });
 
-// const similarSchema = new mongoose.Schema({
-//   product_name: String,
-//   category: String,
-//   size: Array,
-//   description: String,
-//   sku: Number,
-//   stars: Number,
-//   reviews: Number,
-//   badge: Boolean,
-//   loves: Number,
-//   exclusive: Boolean,
-//   online_only: Boolean,
-//   limited_edition: Boolean,
-//   free_shipping: Boolean,
-//   price: String,
-//   image: String
-// });
+const likeSchema = new mongoose.Schema({
+  id: {
+    type: Number,
+    unique: true
+  },
+  like: Array
+});
 
 const SimilarList = mongoose.model('Similarlist', similarSchema);
+const LikeList = mongoose.model('LikeList', likeSchema);
 
-module.exports = SimilarList;
+module.exports = {
+  SimilarList,
+  LikeList
+};

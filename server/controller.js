@@ -1,4 +1,4 @@
-const SimilarList = require('../database/index.js');
+const { SimilarList, LikeList } = require('../database/index.js');
 
 const getSimilar = (req, res) => {
   let { id } = req.params;
@@ -10,9 +10,10 @@ const getSimilar = (req, res) => {
 
 const getLike = (req, res) => {
   let { id } = req.params;
-  SimilarList
+  console.log(req.params);
+  LikeList
     .find({ id })
-    .then(data => res.status(200).json(data[0].similar))
+    .then(data => res.status(200).json(data[0].like))
     .catch(err => console.log(err))
 }
 
