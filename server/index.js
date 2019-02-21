@@ -12,6 +12,6 @@ app.use(parser.urlencoded({ extended: true }));
 
 app.use(express.static(path.resolve(__dirname, '../public')));
 
-app.get('/item', getSimilar);
+app.get('/similar/:id', getSimilar);
 
 app.listen(PORT, () => console.log('Listening to port ', PORT));
