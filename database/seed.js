@@ -3,12 +3,6 @@ const mockData = require('../MOCK_DATA.js');
 const { randomNumberDec, randomNumberInt, randomNumberArr } = require('./helpers.js');
 const faker = require('faker');
 
-// use mockaroo base data to create another json object
-// use that object as the input to the generatelist func
-// generalist creates 100 objects with an id and an array
-// push 15 items from json into array from general object
-// save generalist to object
-
 const newData = (data) => {
   result = [];
   data.forEach(entry => {
@@ -27,7 +21,7 @@ const newData = (data) => {
       limited_edition: Math.random() >= 0.8,
       free_shipping: Math.random() >= 0.7,
       price: `$${randomNumberDec(1, 200)}`,
-      image: faker.image.imageUrl(300,300,"animals")
+      image: `https://picsum.photos/300/300/?image=${Math.floor(Math.random() * 1000) + 1}`
     });
   })
   return result;
