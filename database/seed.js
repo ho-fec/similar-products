@@ -2,7 +2,23 @@ const { SimilarList, LikeList } = require('./index.js');
 const mockData = require('../MOCK_DATA.js');
 const { randomNumberDec, randomNumberInt, randomNumberArr, generateSimilarList, generateLikeList } = require('./helpers.js');
 
-const newData = (data) => {
+const imgArray = ['https://s3-us-west-1.amazonaws.com/ho-fec-similar/s1217710-main-hero-300.jpg',
+'https://s3-us-west-1.amazonaws.com/ho-fec-similar/s1375682-main-hero-300.jpg',
+'https://s3-us-west-1.amazonaws.com/ho-fec-similar/s1376086-main-hero-300.jpg',
+'https://s3-us-west-1.amazonaws.com/ho-fec-similar/s1790039-main-hero-300.jpg',
+'https://s3-us-west-1.amazonaws.com/ho-fec-similar/s1835420-main-hero-300.jpg',
+'https://s3-us-west-1.amazonaws.com/ho-fec-similar/s1897461-main-hero-300.jpg',
+'https://s3-us-west-1.amazonaws.com/ho-fec-similar/s1897487-main-hero-300.jpg',
+'https://s3-us-west-1.amazonaws.com/ho-fec-similar/s1897495-main-hero-300.jpg',
+'https://s3-us-west-1.amazonaws.com/ho-fec-similar/s1899103-main-hero-300.jpg',
+'https://s3-us-west-1.amazonaws.com/ho-fec-similar/s1910413-main-hero-300.jpg',
+'https://s3-us-west-1.amazonaws.com/ho-fec-similar/s1918697-main-hero-300.jpg',
+'https://s3-us-west-1.amazonaws.com/ho-fec-similar/s2070860-main-hero-300.jpg',
+'https://s3-us-west-1.amazonaws.com/ho-fec-similar/s2077477-main-hero-300.jpg',
+'https://s3-us-west-1.amazonaws.com/ho-fec-similar/s407304-main-hero-300.jpg',
+'https://s3-us-west-1.amazonaws.com/ho-fec-similar/s487694-main-hero-300.jpg'];
+
+const dummyData = (data) => {
   result = [];
   data.forEach(entry => {
     result.push({
@@ -26,7 +42,17 @@ const newData = (data) => {
   return result;
 }
 
-const testData = newData(mockData);
+const addRealImages = (data) => {
+  const result = [];
+  for (let i = 0; i < 15; i++) {
+    data[i].image = imgArray[i];
+    result.push(data[i]);
+  }
+  return result;
+}
+const realData = addRealImages(dummyData(mockData));
+
+const testData = dummyData(mockData);
 
 const saveSimilar = (data) => {
   data.forEach(entry => {
@@ -50,7 +76,7 @@ const saveLike = (data) => {
   })
 }
 
-saveSimilar(generateSimilarList(testData));
+saveSimilar(generateSimilarList(realData));
 saveLike(generateLikeList(testData));
 
 // function save(data) {

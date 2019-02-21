@@ -19,7 +19,7 @@ class Carousel extends Component {
   }
 
   componentDidMount() {
-    let id = Math.floor(Math.random() * 100) + 1;
+    let id = 1;
     axios
       .get(`/similar/${id}`)
       .then(({ data }) => {this.setState({ list: [...data] })})

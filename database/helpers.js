@@ -16,8 +16,7 @@ const generateSimilarList = (data) => {
     let newObj = { id: i, similar: [] };
 
     for (let i = 0; i < 15; i++) {
-      let getData = data[randomNumberInt(0, 1500)];
-      newObj.similar.push(getData);
+      newObj.similar.push(data[i]);
     }
     result.push(newObj);
   }

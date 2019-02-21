@@ -25,7 +25,6 @@ class Entry extends Component {
   }
 
   render() {
-    let { loved } = this.state;
 
     return (
       <div className={ styles.entry }>
