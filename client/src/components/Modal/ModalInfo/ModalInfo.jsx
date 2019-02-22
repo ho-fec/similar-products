@@ -12,6 +12,7 @@ class ModalInfo extends Component {
       hovered: false,
       hoverIndex: '0',
       variationSKU: this.props.sku,
+      selectSKU: '',
       random: ''
     }
     this.selectSize = this.selectSize.bind(this);
@@ -26,7 +27,10 @@ class ModalInfo extends Component {
   }
 
   selectSize(e) {
-    this.setState({ selected: e.target.id });
+    this.setState({
+      selected: e.target.id,
+      selectSKU: this.state.random
+    });
   }
 
   onHover(e) {
@@ -51,12 +55,13 @@ class ModalInfo extends Component {
   resetSelect(e) {
     if (this.state.selected === '0') {
       this.setState({
+        hovered: false,
         variationSKU: this.props.sku
       });
     } else {
       this.setState({
         hovered: false,
-        variationSKU: this.state.random
+        variationSKU: this.state.selectSKU
       });
     }
   }
