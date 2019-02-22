@@ -20,7 +20,7 @@ class Carousel extends Component {
 
   componentDidMount() {
     axios
-      .get(`/similar/${this.props.id}`)
+      .get(`/similar`)
       .then(({ data }) => {this.setState({ list: [...data] })})
       .catch(err => console.log(err))
   }
