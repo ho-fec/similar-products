@@ -1,7 +1,9 @@
 import React from 'react';
 import { render } from 'react-dom';
-import App from './components/App';
-import App2 from './components/App2';
+import SimilarApp from './components/SimilarApp';
+import LikeApp from './components/LikeApp';
 
-render(<App />, document.getElementById('app'));
-render(<App2 />, document.getElementById('app2'));
+let id = 1;
+
+render(<SimilarApp id={ id } />, document.getElementById('similar'));
+render(<LikeApp id={ id } />, document.getElementById('youMayLike'));
