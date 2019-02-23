@@ -1,6 +1,7 @@
 .box {
   max-width: 980px;
   margin: auto;
+  box-sizing: content-box;
 }
 
 .titleWrapper {
