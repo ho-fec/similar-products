@@ -60,7 +60,7 @@ class Modal extends Component {
                 onClick={ e => this.props.onClose(e) }>
                 <Close
                   className={ styles.closeSVG }
-                  onClick={ () => this.props.onClose() }
+                  onClick={ () => this.props.onClose(null) }
                 />
               </button>
             </div>
@@ -68,7 +68,6 @@ class Modal extends Component {
         </div>
       </div>
         <div
-          onClick={ () => this.props.onClose() }
           className={ styles.bg }>
         </div>
       </div>

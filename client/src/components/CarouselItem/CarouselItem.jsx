@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import styles from './CarouselItem.css';
-import Modal from '../Modal/ModalContainer';
 import Image from '../Image';
 import Stars from '../Stars';
 import Love from '../Love';
@@ -8,20 +7,6 @@ import Love from '../Love';
 class Entry extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      loved: false,
-      show: false
-    }
-    this.handleLove = this.handleLove.bind(this);
-    this.showModal = this.showModal.bind(this);
-  }
-
-  handleLove(e) {
-    this.setState({ loved: !this.state.loved });
-  }
-
-  showModal() {
-    this.setState({ show: !this.state.show });
   }
 
   render() {
@@ -35,38 +20,14 @@ class Entry extends Component {
               <button
               type='button'
               className={ styles.moreInfo }
-              onClick={ this.showModal }>
+              onClick={ () => this.props.showModal(this.props.index) }>
                 Quick Look
               </button>
-              <Modal
-              onClose={ this.showModal }
-              loved={ this.state.loved }
-              handleLove={ this.handleLove }
-
-              show={ this.state.show }
-              props={ this.props }
-              name={ this.props.name }
-              category={ this.props.category }
-              size={ this.props.size }
-              description={ this.props.description }
-              sku={ this.props.sku }
-              stars={ this.props.stars }
-              reviews={ this.props.reviews }
-              badge={ this.props.badge }
-              loves={ this.props.loves }
-              exclusive={ this.props.exclusive }
-              online={ this.props.online }
-              limited={ this.props.limited }
-              free={ this.props.free }
-              price={ this.props.price }
-              image={ this.props.image }
-              />
-
               <div className={ styles.loveContainer }>
                 <button
                 className={ styles.loveButton }
-                onClick={ this.handleLove }>
-                  <Love loved={ this.state.loved } />
+                onClick={ () => this.props.handleLove() }>
+                  <Love loved={ this.props.loved } />
                 </button>
               </div>
             </div>
