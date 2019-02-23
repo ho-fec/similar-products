@@ -20,12 +20,11 @@ class Entry extends Component {
     this.setState({ loved: !this.state.loved });
   }
 
-  showModal(e) {
+  showModal() {
     this.setState({ show: !this.state.show });
   }
 
   render() {
-
     return (
       <div className={ styles.entry }>
         <div className={ styles.itemContainer1 }>
