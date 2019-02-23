@@ -1,3 +1,12 @@
+.divider {
+  display: block;
+  color: #eee;
+  margin-bottom: 24px;
+  margin-top: 24px;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}
+
 .box {
   max-width: 980px;
   margin: auto;
