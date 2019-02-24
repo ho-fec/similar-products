@@ -31,7 +31,7 @@ const dummyData = data => {
   data.forEach(entry => {
     result.push({
       product_name: entry.product_name,
-      category: entry.category,
+      category: entry.category.split(' ').slice(0, 3).join(' '),
       size: randomNumberArr(randomNumberInt(1, 5)),
       description: entry.description,
       sku: randomNumberInt(1000000, 2000000),
