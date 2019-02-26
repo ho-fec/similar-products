@@ -4,7 +4,6 @@ import styles from './LikeApp.css';
 
 const LikeApp = props => (
   <div className={styles.box}>
-    <div className={styles.divider} />
     <div className={styles.titleWrapper}>
       <div className={styles.title}>You May Also Like</div>
     </div>
