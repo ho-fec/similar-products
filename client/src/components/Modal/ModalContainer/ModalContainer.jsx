@@ -5,10 +5,82 @@ import ModalInfo from '../ModalInfo';
 import ModalBottomLeft from '../ModalBottomLeft';
 import ModalBottomRight from '../ModalBottomRight';
 import Close from './Close.jsx';
+import { randomNumberInt, randomNumberDec } from '../../../../../database/helpers.js';
+
 
 class Modal extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      selected: '0',
+      hovered: false,
+      hoverIndex: '0',
+      variationSKU: this.props.sku,
+      selectSKU: null,
+      random: null,
+      selectPrice: this.props.price,
+      tempPrice: null,
+      randomPrice: null
+    }
+    this.selectSize = this.selectSize.bind(this);
+    this.onHover = this.onHover.bind(this);
+    this.resetSelect = this.resetSelect.bind(this);
+  }
+
+  selectSize(e) {
+    if (e.target.id !== '0') {
+      this.setState({
+        selected: e.target.id,
+        selectSKU: this.state.random,
+        selectPrice: this.state.randomPrice,
+        tempPrice: this.state.randomPrice
+      });
+    } else {
+      this.setState({
+        selected: e.target.id,
+        selectSKU: this.state.random,
+        selectPrice: this.props.price
+      });
+    }
+  }
+
+  onHover(e) {
+    this.setState({
+      hovered: true,
+      hoverIndex: e.target.id
+    });
+
+    if (e.target.id === '0') {
+      this.setState({
+        variationSKU: this.props.sku,
+        selectPrice: this.props.price
+      });
+    } else if (e.target.id !== this.state.selected) {
+      let randomSKU = randomNumberInt(1000000, 2000000);
+      let randomPrice = `$${randomNumberDec(0, 100)}`;
+      this.setState({
+        variationSKU: randomSKU,
+        random: randomSKU,
+        selectPrice: randomPrice,
+        randomPrice: randomPrice
+      });
+    }
+  }
+
+  resetSelect(e) {
+    if (this.state.selected === '0') {
+      this.setState({
+        hovered: false,
+        variationSKU: this.props.sku,
+        selectPrice: this.props.price
+      });
+    } else {
+      this.setState({
+        hovered: false,
+        variationSKU: this.state.selectSKU,
+        selectPrice: this.state.tempPrice
+      });
+    }
   }
 
   render() {
@@ -29,6 +101,14 @@ class Modal extends Component {
                     badge={ this.props.badge }
                   />
                   <ModalInfo
+                    selectSize={ this.selectSize }
+                    onHover={ this.onHover }
+                    resetSelect={ this.resetSelect }
+                    selected={ this.state.selected }
+                    hovered={ this.state.hovered }
+                    hoverIndex={ this.state.hoverIndex }
+                    variationSKU={ this.state.variationSKU }
+
                     name={ this.props.name }
                     category={ this.props.category }
                     size={ this.props.size }
@@ -50,7 +130,7 @@ class Modal extends Component {
                     loved={ this.props.loved }
                     handleLove={ this.props.handleLove }
                     free={ this.props.free }
-                    price={ this.props.price }
+                    price={ this.state.selectPrice }
                   />
                 </div>
               </div>
@@ -68,7 +148,8 @@ class Modal extends Component {
         </div>
       </div>
         <div
-          className={ styles.bg }>
+          className={ styles.bg }
+        >
         </div>
       </div>
     );

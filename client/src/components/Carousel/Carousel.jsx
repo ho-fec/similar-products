@@ -25,7 +25,7 @@ class Carousel extends Component {
 
   componentDidMount() {
     axios
-      .get(`/similar`)
+      .get(`/similar/1`)
       .then(({ data }) => {
         this.setState({ list: [...data] });
       })
@@ -113,9 +113,9 @@ class Carousel extends Component {
               badge={item.badge}
               loves={item.loves}
               exclusive={item.exclusive}
-              online={item.online}
-              limited={item.limited}
-              free={item.free}
+              online={item.online_only}
+              limited={item.limited_edition}
+              free={item.free_shipping}
               price={item.price}
               image={item.image}
             />

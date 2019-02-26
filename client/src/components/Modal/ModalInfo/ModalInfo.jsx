@@ -1,23 +1,13 @@
 import React, { Component } from 'react';
 import styles from './ModalInfo.css';
-import { randomNumberInt } from '../../../../../database/helpers.js';
 
 
 class ModalInfo extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      single: true,
-      selected: '0',
-      hovered: false,
-      hoverIndex: '0',
-      variationSKU: this.props.sku,
-      selectSKU: '',
-      random: ''
+      single: true
     }
-    this.selectSize = this.selectSize.bind(this);
-    this.onHover = this.onHover.bind(this);
-    this.resetSelect = this.resetSelect.bind(this);
   }
 
   componentDidMount() {
@@ -26,52 +16,13 @@ class ModalInfo extends Component {
     }
   }
 
-  selectSize(e) {
-    this.setState({
-      selected: e.target.id,
-      selectSKU: this.state.random
-    });
-  }
-
-  onHover(e) {
-    this.setState({
-      hovered: true,
-      hoverIndex: e.target.id
-    });
-
-    if (e.target.id === '0') {
-      this.setState({
-        variationSKU: this.props.sku
-      });
-    } else if (e.target.id !== this.state.selected) {
-      let random = randomNumberInt(1000000, 2000000);
-      this.setState({
-        variationSKU: random,
-        random: random
-      });
-    }
-  }
-
-  resetSelect(e) {
-    if (this.state.selected === '0') {
-      this.setState({
-        hovered: false,
-        variationSKU: this.props.sku
-      });
-    } else {
-      this.setState({
-        hovered: false,
-        variationSKU: this.state.selectSKU
-      });
-    }
-  }
-
   render() {
     const oz = (ml) => {
       return (ml * 0.033814).toFixed(1);
     }
 
-    let { selected, single, hovered, hoverIndex, variationSKU } = this.state;
+    let { single } = this.state;
+    let { selected, hovered, hoverIndex, variationSKU } = this.props;
 
     let sizeSpan;
     if (!hovered) {
@@ -123,13 +74,13 @@ class ModalInfo extends Component {
                   <button
                   id={ i }
                   className={ item === this.props.size[selected] ? styles.variationButtonSelect : styles.variationButton }
-                  onMouseEnter={ this.onHover }
-                  onMouseLeave={ this.resetSelect }
+                  onMouseEnter={ e => this.props.onHover(e) }
+                  onMouseLeave={ e => this.props.resetSelect(e) }
                   >
                     <div
                     id={ i }
                     className={ styles.buttonContent }
-                    onClick={ this.selectSize }
+                    onClick={ e => this.props.selectSize(e) }
                     >
                       { oz(item) } oz/ { item } mL
                     </div>
