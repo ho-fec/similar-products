@@ -20,7 +20,7 @@ class Modal extends Component {
       random: null,
       selectPrice: this.props.price,
       tempPrice: null,
-      randomPrice: null
+      newPrice: null
     }
     this.selectSize = this.selectSize.bind(this);
     this.onHover = this.onHover.bind(this);
@@ -32,8 +32,8 @@ class Modal extends Component {
       this.setState({
         selected: e.target.id,
         selectSKU: this.state.random,
-        selectPrice: this.state.randomPrice,
-        tempPrice: this.state.randomPrice
+        selectPrice: this.state.newPrice,
+        tempPrice: this.state.newPrice
       });
     } else {
       this.setState({
@@ -57,12 +57,13 @@ class Modal extends Component {
       });
     } else if (e.target.id !== this.state.selected) {
       let randomSKU = randomNumberInt(1000000, 2000000);
-      let randomPrice = `$${randomNumberDec(0, 100)}`;
+      let priceNum = this.props.price.slice(1);
+      let newPrice = `$${ (priceNum * this.props.size[e.target.id] / this.props.size[0]).toFixed(2) }`;
       this.setState({
         variationSKU: randomSKU,
         random: randomSKU,
-        selectPrice: randomPrice,
-        randomPrice: randomPrice
+        selectPrice: newPrice,
+        newPrice: newPrice
       });
     }
   }
