@@ -1,13 +1,12 @@
 # Project Name
 
-> Project description
+A full stack microservice application for the Similar Products and You May Also Like sections of the Sephora product page
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - https://github.com/ho-fec/product-details
+  - https://github.com/ho-fec/explore-this-product
+  - https://github.com/ho-fec/ratings-and-reviews
 
 ## Table of Contents
 
@@ -32,8 +31,15 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 
 From within the root directory:
 
+1. Install dependencies
 ```sh
-npm install -g webpack
 npm install
 ```
-
+2. Build and compile with webpack
+```sh
+npm run build
+```
+3. Run node server
+```sh
+npm start
+```
