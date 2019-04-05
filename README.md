@@ -8,12 +8,6 @@ A full stack microservice application for the Similar Products and You May Also 
   - https://github.com/ho-fec/explore-this-product
   - https://github.com/ho-fec/ratings-and-reviews
 
-## Table of Contents
-
-1. [Usage](#Usage)
-1. [Requirements](#requirements)
-1. [Development](#development)
-
 ## Requirements
 
 An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
